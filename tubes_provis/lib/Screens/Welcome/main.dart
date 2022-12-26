@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tubes_provis/Screens/Welcome/constants.dart';
+import 'package:tubes_provis/Screens/constants.dart';
 import 'package:tubes_provis/Screens/Welcome/landing_page.dart';
 
 void main() {

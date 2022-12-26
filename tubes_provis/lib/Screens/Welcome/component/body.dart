@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tubes_provis/Screens/Welcome/constants.dart';
+import 'package:tubes_provis/Screens/constants.dart';
 
 
 class Body extends StatelessWidget{
@@ -17,11 +17,14 @@ class Body extends StatelessWidget{
               'assets/images/bmi_logo.png',
 
           ),
+
           Text(
             "BMI Calculator",
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 35),
           ),
+
           SizedBox(height: 60),
+
           Container(
             width: 276,
             height: 48,
@@ -43,6 +46,7 @@ class Body extends StatelessWidget{
                 ),
               ),
           ),
+          
           Container(
             width: 276,
             height: 48,
