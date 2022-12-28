@@ -15,7 +15,6 @@ class Body extends StatelessWidget{
         children: <Widget>[
           Image.asset(
               'assets/images/bmi_logo.png',
-
           ),
 
           Text(
