@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tubes_provis/Screens/constants.dart';
-import 'package:tubes_provis/Screens/About/about_page.dart';
+import 'package:tubes_provis/constants.dart';
+import 'package:tubes_provis/Screens/AboutPage/about_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         primaryColor: kPink,
         scaffoldBackgroundColor: Colors.white,
       ),
-      home: WelcomeScreen(),
+      home: AboutPage(),
     );
   }
 }

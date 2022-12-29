@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:tubes_provis/Screens/About/backButton.dart';
-import 'package:tubes_provis/Screens/constants.dart';
+import 'package:tubes_provis/Screens/AboutPage/backButton.dart';
+import 'package:tubes_provis/constants.dart';
 
 
-class Body extends StatelessWidget{
+class About extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     Size size = MediaQuery.of(context).size;

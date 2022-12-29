@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:tubes_provis/Screens/constants.dart';
+import 'package:tubes_provis/constants.dart';
+import 'package:tubes_provis/Screens/AboutPage/body_about.dart';
 
-
-class Body extends StatelessWidget{
+class LandingPage extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     Size size = MediaQuery.of(context).size;
@@ -51,7 +51,11 @@ class Body extends StatelessWidget{
             height: 48,
 
             child: ElevatedButton(
-              onPressed: (){},
+              onPressed: (){
+                // Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+                //   return About();
+                // }));
+              },
               child: Text("   Sign In   "),
               style: ElevatedButton.styleFrom(
                   side: BorderSide(
