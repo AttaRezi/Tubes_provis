@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tubes_provis/constants.dart';
 
-
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -49,7 +48,7 @@ class HomePage extends StatelessWidget {
             ListTile(
                 leading: const Icon(Icons.text_snippet_outlined),
                 title: Text("Information"),
-                onTap: (){Navigator.of(context).pushNamed("/");}
+                onTap: (){Navigator.of(context).pushNamed("/info");}
             ),
             ListTile(
                 leading: const Icon(Icons.article_sharp),
