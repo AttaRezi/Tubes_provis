@@ -7,8 +7,7 @@ class About extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     Size size = MediaQuery.of(context).size;
-    return backButton(
-
+    return Container(
       child: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
