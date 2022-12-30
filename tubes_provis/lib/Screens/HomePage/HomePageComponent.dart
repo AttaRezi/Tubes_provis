@@ -50,7 +50,7 @@ class HomePage extends StatelessWidget {
               ListTile(
                   leading: const Icon(Icons.text_snippet_outlined),
                   title: Text("Information"),
-                  onTap: (){Navigator.of(context).pushNamed("/");}
+                  onTap: (){Navigator.of(context).pushNamed("/info");}
               ),
               ListTile(
                   leading: const Icon(Icons.article_sharp),
@@ -180,7 +180,7 @@ class HomePage extends StatelessWidget {
                                           ],
                                         )
                                     ),
-                                    onTap: (){Navigator.of(context).pushNamed("/");}
+                                    onTap: (){Navigator.of(context).pushNamed("/about");}
                                   ),
                                   const SizedBox(height: 15,),
                                   InkWell(
