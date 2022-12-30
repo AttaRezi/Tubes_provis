@@ -7,6 +7,7 @@ import 'package:tubes_provis/Screens/HomePage/HomePageComponent.dart';
 import 'package:tubes_provis/Screens/AboutPage/body_about.dart';
 import 'package:tubes_provis/Screens/AboutPage/about_page.dart';
 import 'package:tubes_provis/Screens/InfoPage/InfoPageComponent.dart';
+import 'package:tubes_provis/Screens/BlogTopicPage/BlogTopic.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'BMIXpert - UAS Provis',
       theme: ThemeData(
         fontFamily: 'Poppins',
         primaryColor: kPink,
@@ -33,6 +34,7 @@ class MyApp extends StatelessWidget {
         '/about' : (context) => AboutPage(),
         '/home' : (contex) => HomePage(),
         '/info' : (contex) => InfoPage(),
+        '/blog_topic' : (contex) => BlogTopicPage(),
       },
     );
   }

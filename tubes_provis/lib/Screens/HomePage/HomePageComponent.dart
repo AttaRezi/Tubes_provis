@@ -55,7 +55,7 @@ class HomePage extends StatelessWidget {
               ListTile(
                   leading: const Icon(Icons.article_sharp),
                   title: Text("Blog"),
-                  onTap: (){Navigator.of(context).pushNamed("/");}
+                  onTap: (){Navigator.of(context).pushNamed("/blog_topic");}
               ),
               ListTile(
                   leading: const Icon(Icons.info),
