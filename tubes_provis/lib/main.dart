@@ -6,7 +6,7 @@ import 'package:tubes_provis/Screens/LandingPage/LandingPageComponent.dart';
 import 'package:tubes_provis/Screens/HomePage/HomePageComponent.dart';
 import 'package:tubes_provis/Screens/AboutPage/body_about.dart';
 import 'package:tubes_provis/Screens/AboutPage/about_page.dart';
-
+import 'package:tubes_provis/Screens/InfoPage/InfoPageComponent.dart';
 
 void main() {
   runApp(const MyApp());
@@ -32,6 +32,7 @@ class MyApp extends StatelessWidget {
         '/' : (context) => MyHomePage(),
         '/about' : (context) => AboutPage(),
         '/home' : (contex) => HomePage(),
+        '/info' : (contex) => InfoPage(),
       },
     );
   }
