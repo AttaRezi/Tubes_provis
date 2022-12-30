@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:tubes_provis/constants.dart';
+import 'package:tubes_provis/Screens/HomePage/HeaderShape.dart';
 
 
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    // Size size = MediaQuery.of(context).size;
 
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: kPink,
-        //title: Text(widget.title),
-      ),
+      // appBar: AppBar(
+      //   backgroundColor: kPink,
+      //   //title: Text(widget.title),
+      // ),
       drawer: Drawer(
         child: ListView(
           children: [
@@ -81,7 +82,11 @@ class HomePage extends StatelessWidget {
         ),
       ),
         body: Container(
-          child: Text("Haloo"),
+          // child: Text("Haloooo"),
+            child: CustomPaint(
+              painter: SquareWithRoundedCornerPainter(),
+              // child: Text('Hello World'),
+              )
         )
     );
   }
