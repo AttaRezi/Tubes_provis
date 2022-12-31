@@ -13,6 +13,7 @@ import 'package:tubes_provis/Screens/InfoPage/InfoPageComponent.dart';
 import 'package:tubes_provis/Screens/BlogTopicPage/BlogTopic.dart';
 import 'package:tubes_provis/Screens/CalculatorPage/CalculatorPageComponent.dart';
 import 'package:tubes_provis/Screens/CalculatorPage/CalculateChangeNotifier.dart';
+import 'package:tubes_provis/Screens/SignUpPage/SignUp.dart';
 
 
 void main() {
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
       create: (context) => Calculate(),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'BMIXpert - UAS Provis',
+        title: 'BMIXpert - UAS Pemrograman Visual dan Piranti Bergerak',
         theme: ThemeData(
           fontFamily: 'Poppins',
           primaryColor: kPink,
@@ -45,6 +46,7 @@ class MyApp extends StatelessWidget {
           '/blog_topic' : (contex) => BlogTopicPage(),
           '/calculator' : (contex) => CalculatorPage(),
           '/result' : (contex) => ResultPage(),
+          '/sign_up' : (contex) => SignUpPage(),
         },
       )
     );

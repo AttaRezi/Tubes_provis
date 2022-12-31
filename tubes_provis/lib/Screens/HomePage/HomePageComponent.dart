@@ -58,6 +58,11 @@ class HomePage extends StatelessWidget {
                   onTap: (){Navigator.of(context).pushNamed("/blog_topic");}
               ),
               ListTile(
+                  leading: const Icon(Icons.history_outlined),
+                  title: Text("History"),
+                  onTap: (){Navigator.of(context).pushNamed("/blog_topic");}
+              ),
+              ListTile(
                   leading: const Icon(Icons.info),
                   title: Text("About"),
                   onTap: (){Navigator.of(context).pushNamed("/about");}
@@ -75,7 +80,9 @@ class HomePage extends StatelessWidget {
                           Divider(),
                           ListTile(
                               leading: Icon(Icons.logout),
-                              title: Text('Log out'))
+                              title: Text('Log out'),
+                              onTap: (){Navigator.of(context).pushNamed("/");}
+                          )
                         ],
                       ))),
             ],

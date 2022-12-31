@@ -26,10 +26,12 @@ class LandingPage extends StatelessWidget{
 
           Container(
             width: 276,
-            height: 48,
+            height: 58,
             margin: EdgeInsets.symmetric(vertical: 20),
               child: ElevatedButton(
-                onPressed: (){},
+                onPressed: (){
+                  Navigator.of(context).pushNamed("/sign_up");
+                },
                 child: Text("   Sign Up   "),
                 style: ElevatedButton.styleFrom(
                     side: BorderSide(
@@ -48,7 +50,7 @@ class LandingPage extends StatelessWidget{
           
           Container(
             width: 276,
-            height: 48,
+            height: 58,
 
             child: ElevatedButton(
               onPressed: (){

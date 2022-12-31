@@ -54,9 +54,9 @@ class InfoPage extends StatelessWidget {
                   Center(
                     child: Column(
                       children: [
-                        SizedBox(height: 80),
+                        SizedBox(height: 50),
                         Padding(
-                          padding: EdgeInsets.only(left: 50.0, top: 10.0, right: 30.0, bottom: 60.0),
+                          padding: EdgeInsets.only(left: 30.0, right: 30.0, bottom: 50.0),
                           child: Text(
                             "Classification of Weight Status",
                             style: TextStyle(color: Colors.white, fontSize: 40,),
@@ -81,10 +81,10 @@ class InfoPage extends StatelessWidget {
                         width: MediaQuery.of(context).size.width * 0.7,
 
                         child: Padding(
-                            padding: EdgeInsets.all(20),
+                            padding: EdgeInsets.only(left: 10, right: 10, bottom: 50),
                             child: Column(
                               children: [
-                                const SizedBox(height: 15,),
+                                const SizedBox(height: 15),
                                 Container(
                                   decoration: BoxDecoration(
                                       color: const Color(0xffdff3f3),
@@ -101,7 +101,7 @@ class InfoPage extends StatelessWidget {
                                                     fontSize: 20,
                                                     fontWeight: FontWeight.bold)),
                                             TextSpan(text: '\n'),
-                                            TextSpan(text: 'Where your Body Mass Index (BMI)            '),
+                                            TextSpan(text: 'Where your Body Mass Index (BMI)  '),
                                             TextSpan(text: '<18.5 Kg/m2', style: TextStyle(
                                                 fontSize: 18,
                                                 fontWeight: FontWeight.bold))
@@ -109,7 +109,7 @@ class InfoPage extends StatelessWidget {
                                       )
                                   ),
                                 ),
-                                const SizedBox(height: 15,),
+                                const SizedBox(height: 15),
                                 Container(
                                   decoration: BoxDecoration(
                                       color: const Color(0xffdff3f3),
@@ -134,7 +134,7 @@ class InfoPage extends StatelessWidget {
                                       )
                                   ),
                                 ),
-                                const SizedBox(height: 15,),
+                                const SizedBox(height: 15),
                                 Container(
                                   decoration: BoxDecoration(
                                       color: const Color(0xffdff3f3),
@@ -159,7 +159,7 @@ class InfoPage extends StatelessWidget {
                                       )
                                   ),
                                 ),
-                                const SizedBox(height: 15,),
+                                const SizedBox(height: 15),
                                 Container(
                                   decoration: BoxDecoration(
                                       color: const Color(0xffdff3f3),
@@ -176,7 +176,7 @@ class InfoPage extends StatelessWidget {
                                                     fontSize: 20,
                                                     fontWeight: FontWeight.bold)),
                                             TextSpan(text: '\n'),
-                                            TextSpan(text: 'Where your Body Mass Index (BMI)                '),
+                                            TextSpan(text: 'Where your Body Mass Index (BMI)  '),
                                             TextSpan(text: '>30 Kg/m2', style: TextStyle(
                                                 fontSize: 18,
                                                 fontWeight: FontWeight.bold))
