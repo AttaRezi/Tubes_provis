@@ -45,7 +45,7 @@ class HomePage extends StatelessWidget {
               ListTile(
                   leading: const Icon(Icons.calculate),
                   title: Text("BMI Calculator"),
-                  onTap: (){Navigator.of(context).pushNamed("/");}
+                  onTap: (){Navigator.of(context).pushNamed("/calculator");}
               ),
               ListTile(
                   leading: const Icon(Icons.text_snippet_outlined),
@@ -180,7 +180,7 @@ class HomePage extends StatelessWidget {
                                           ],
                                         )
                                     ),
-                                    onTap: (){Navigator.of(context).pushNamed("/about");}
+                                    onTap: (){Navigator.of(context).pushNamed("/calculator");}
                                   ),
                                   const SizedBox(height: 15,),
                                   InkWell(
@@ -206,7 +206,7 @@ class HomePage extends StatelessWidget {
                                           ],
                                         )
                                     ),
-                                    onTap: (){Navigator.of(context).pushNamed("/");}
+                                    onTap: (){Navigator.of(context).pushNamed("/blog_topic");}
                                   ),
                                   const SizedBox(height: 100),
                                 ],
