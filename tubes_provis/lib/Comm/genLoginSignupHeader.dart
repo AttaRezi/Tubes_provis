@@ -11,20 +11,19 @@ class genLoginSignupHeader extends StatelessWidget {
       child: Column(
         children: [
           SizedBox(height: 50.0),
-          Text(
-            headerName,
+          Text(headerName,
+            textAlign: TextAlign.center,
             style: TextStyle(
                 fontWeight: FontWeight.bold,
                 color: Colors.black,
                 fontSize: 40.0),
           ),
           SizedBox(height: 10.0),
-          Image.asset(
-            "assets/images/bmi_logo.png",
+          Image.asset("assets/images/bmi_logo.png",
             height: 150.0,
             width: 150.0,
           ),
-          SizedBox(height: 10.0),
+          SizedBox(height: 10.0)
         ],
       ),
     );

@@ -6,6 +6,9 @@ import 'package:tubes_provis/DatabaseHandler/DbHelper.dart';
 import 'package:tubes_provis/Model/UserModel.dart';
 import 'package:tubes_provis/Screens/AuthenticationPage/SignupForm.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:tubes_provis/Screens/HomePage/HomePageComponent.dart';
+import 'package:tubes_provis/constants.dart';
+import 'package:flutter/gestures.dart';
 
 import 'HomeForm.dart';
 
@@ -42,7 +45,7 @@ class _LoginFormState extends State<LoginForm> {
           setSP(userData).whenComplete(() {
             Navigator.pushAndRemoveUntil(
                 context,
-                MaterialPageRoute(builder: (_) => HomeForm()),
+                MaterialPageRoute(builder: (_) => HomePage()),
                 (Route<dynamic> route) => false);
           });
         } else {
@@ -68,7 +71,17 @@ class _LoginFormState extends State<LoginForm> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Login with Signup'),
+        elevation: 0,
+        brightness: Brightness.light,
+        backgroundColor: Colors.white,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: Icon(Icons.arrow_back_ios,
+            size: 20,
+            color: Colors.black,),
+        ),
       ),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
@@ -77,7 +90,7 @@ class _LoginFormState extends State<LoginForm> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                genLoginSignupHeader('Login'),
+                genLoginSignupHeader('Sign In'),
                 getTextFormField(
                     controller: _conUserId,
                     icon: Icons.person,
@@ -94,32 +107,45 @@ class _LoginFormState extends State<LoginForm> {
                   width: double.infinity,
                   child: ElevatedButton(
                     child: Text(
-                      'Login',
+                      'Sign In',
                       style: TextStyle(color: Colors.white),
                     ),
-                    onPressed: (){
-                      Navigator.of(context).pushNamed("/home");
-                    },
-                  ),
-                  decoration: BoxDecoration(
-                    color: Colors.blue,
-                    borderRadius: BorderRadius.circular(30.0),
+                    onPressed: login,
+
+                    style: ElevatedButton.styleFrom(
+                        side: BorderSide(
+                            width: 1.0,
+                            color: kPink
+                        ),
+                        backgroundColor: kPink,
+                        textStyle: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                        padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(39.0)
+                        )
+                    ),
                   ),
                 ),
                 Container(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text('Does not have account? '),
-                      ElevatedButton(
-                        // textColor: Colors.blue,
-                        child: Text('Signup'),
-                        onPressed: () {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (_) => SignupForm()));
-                        },
-                      )
-                    ],
+                  width: MediaQuery.of(context).size.width * 0.7,
+                  child: Text.rich(
+                    textAlign: TextAlign.center,
+                    TextSpan(
+                        children: [
+                          TextSpan(text: 'Does not have an account? ',
+                              style: TextStyle(
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.bold)),
+                          TextSpan(text: 'Sign Up',
+                              style: TextStyle(
+                                  fontSize: 13,
+                                  color: const Color(0xff59C3C3),
+                                  fontWeight: FontWeight.bold),
+                              recognizer: TapGestureRecognizer()
+                                ..onTap = (){Navigator.of(context).pushNamed("/sign_up");}
+                          ),
+                        ]
+                    ),
                   ),
                 ),
               ],

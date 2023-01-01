@@ -12,11 +12,11 @@ class getTextFormField extends StatelessWidget {
 
   getTextFormField(
       {required this.controller,
-      required this.hintName,
-      required this.icon,
-      this.isObscureText = false,
-      this.inputType = TextInputType.text,
-      this.isEnable = true});
+        required this.hintName,
+        required this.icon,
+        this.isObscureText = false,
+        this.inputType = TextInputType.text,
+        this.isEnable = true});
 
   @override
   Widget build(BuildContext context) {
@@ -38,12 +38,11 @@ class getTextFormField extends StatelessWidget {
         },
         decoration: InputDecoration(
           enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(30.0)),
+            borderRadius: BorderRadius.all(Radius.circular(39.0)),
             borderSide: BorderSide(color: Colors.transparent),
           ),
           focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(30.0)),
-            borderSide: BorderSide(color: Colors.blue),
+            borderRadius: BorderRadius.all(Radius.circular(39.0)),
           ),
           prefixIcon: Icon(icon),
           hintText: hintName,

@@ -5,6 +5,8 @@ import 'package:tubes_provis/Comm/genTextFormField.dart';
 import 'package:tubes_provis/DatabaseHandler/DbHelper.dart';
 import 'package:tubes_provis/Model/UserModel.dart';
 import 'package:tubes_provis/Screens/AuthenticationPage/LoginForm.dart';
+import 'package:flutter/gestures.dart';
+import 'package:tubes_provis/constants.dart';
 
 class SignupForm extends StatefulWidget {
   @override
@@ -58,7 +60,17 @@ class _SignupFormState extends State<SignupForm> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Login with Signup'),
+        elevation: 0,
+        brightness: Brightness.light,
+        backgroundColor: Colors.white,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: Icon(Icons.arrow_back_ios,
+            size: 20,
+            color: Colors.black,),
+        ),
       ),
       body: Form(
         key: _formKey,
@@ -69,31 +81,32 @@ class _SignupFormState extends State<SignupForm> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  genLoginSignupHeader('Signup'),
+                  genLoginSignupHeader('Create your account'),
                   getTextFormField(
                       controller: _conUserId,
-                      icon: Icons.person,
+                      icon: Icons.person_outline,
+                      inputType: TextInputType.name,
                       hintName: 'User ID'),
-                  SizedBox(height: 10.0),
+                  SizedBox(height: 15.0),
                   getTextFormField(
                       controller: _conUserName,
                       icon: Icons.person_outline,
                       inputType: TextInputType.name,
-                      hintName: 'User Name'),
-                  SizedBox(height: 10.0),
+                      hintName: 'Username'),
+                  SizedBox(height: 15.0),
                   getTextFormField(
                       controller: _conEmail,
                       icon: Icons.email,
                       inputType: TextInputType.emailAddress,
                       hintName: 'Email'),
-                  SizedBox(height: 10.0),
+                  SizedBox(height: 15.0),
                   getTextFormField(
                     controller: _conPassword,
                     icon: Icons.lock,
                     hintName: 'Password',
                     isObscureText: true,
                   ),
-                  SizedBox(height: 10.0),
+                  SizedBox(height: 15.0),
                   getTextFormField(
                     controller: _conCPassword,
                     icon: Icons.lock,
@@ -101,36 +114,49 @@ class _SignupFormState extends State<SignupForm> {
                     isObscureText: true,
                   ),
                   Container(
+                    width: MediaQuery.of(context).size.width * 0.7,
+                    child: Text.rich(
+                      textAlign: TextAlign.center,
+                      TextSpan(
+                          children: [
+                            TextSpan(text: '\nAlready have an account? ',
+                                style: TextStyle(
+                                    fontSize: 13,
+                                    fontWeight: FontWeight.bold)),
+                            TextSpan(text: 'Sign In',
+                                style: TextStyle(
+                                    fontSize: 13,
+                                    color: const Color(0xff59C3C3),
+                                    fontWeight: FontWeight.bold),
+                                recognizer: TapGestureRecognizer()
+                                  ..onTap = (){Navigator.of(context).pushNamed("/sign_in");}
+                            ),
+                          ]
+                      ),
+                    ),
+                  ),
+                  Container(
                     margin: EdgeInsets.all(30.0),
                     width: double.infinity,
                     child: ElevatedButton(
                       child: Text(
-                        'Signup',
+                        'Create account',
                         style: TextStyle(color: Colors.white),
                       ),
                       onPressed: signUp,
-                    ),
-                    decoration: BoxDecoration(
-                      color: Colors.blue,
-                      borderRadius: BorderRadius.circular(30.0),
-                    ),
-                  ),
-                  Container(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text('Does you have account? '),
-                        ElevatedButton(
-                          // textColor: Colors.blue,
-                          child: Text('Sign In'),
-                          onPressed: () {
-                            Navigator.pushAndRemoveUntil(
-                                context,
-                                MaterialPageRoute(builder: (_) => LoginForm()),
-                                (Route<dynamic> route) => false);
-                          },
-                        )
-                      ],
+
+                      style: ElevatedButton.styleFrom(
+                          side: BorderSide(
+                              width: 1.0,
+                              color: kPink
+                          ),
+                          backgroundColor: kPink,
+                          textStyle: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                          padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(39.0)
+                          )
+                      ),
                     ),
                   ),
                 ],
