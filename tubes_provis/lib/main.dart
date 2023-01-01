@@ -5,7 +5,8 @@ import 'package:provider/provider.dart';
 
 import 'package:flutter/material.dart';
 import 'package:tubes_provis/Screens/ResultPage/ResultPageComponent.dart';
-import 'package:tubes_provis/Screens/loginPage/LoginForm.dart';
+import 'package:tubes_provis/Screens/AuthenticationPage/LoginForm.dart';
+import 'package:tubes_provis/Screens/AuthenticationPage/SignupForm.dart';
 import 'package:tubes_provis/constants.dart';
 import 'package:tubes_provis/Screens/LandingPage/LandingPageComponent.dart';
 import 'package:tubes_provis/Screens/HomePage/HomePageComponent.dart';
@@ -48,7 +49,9 @@ class MyApp extends StatelessWidget {
           '/blog_topic' : (contex) => BlogTopicPage(),
           '/calculator' : (contex) => CalculatorPage(),
           '/result' : (contex) => ResultPage(),
-          '/sign_up' : (contex) => SignUpPage(),
+          '/sign_up' : (contex) => SignupForm(),
+          '/sign_in' : (contex) => LoginForm(),
+
         },
       )
     );
@@ -72,7 +75,7 @@ class _MyHomePageState extends State<MyHomePage> {
       //
       //   title: Text(widget.title),
       // ),
-      body: LoginForm()
+      body: LandingPage()
     );
   }
 }

@@ -54,7 +54,7 @@ class LandingPage extends StatelessWidget{
 
             child: ElevatedButton(
               onPressed: (){
-                    Navigator.of(context).pushNamed("/home");
+                    Navigator.of(context).pushNamed("/sign_in");
                 // Navigator.of(context).push(MaterialPageRoute(builder: (context) {
                 //   return HomePage();
                 // }));
