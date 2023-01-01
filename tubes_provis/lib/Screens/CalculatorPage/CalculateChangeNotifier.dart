@@ -7,6 +7,7 @@ class Calculate extends ChangeNotifier{
   double bmi = 0;
   int weight = 0;
   int height = 0;
+  late String date;
   late String resultCategory;
   late String comment;
   late Color colors;
@@ -14,6 +15,11 @@ class Calculate extends ChangeNotifier{
   void count(int weight, int height){
 
     bmi = (weight / pow(height / 100, 2));
+    notifyListeners();
+  }
+
+  void addDate(String dateInput){
+    date = dateInput;
     notifyListeners();
   }
 

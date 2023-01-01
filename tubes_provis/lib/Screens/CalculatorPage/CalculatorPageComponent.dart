@@ -5,6 +5,7 @@ import 'package:tubes_provis/Screens/CalculatorPage/CalculateChangeNotifier.dart
 import 'package:tubes_provis/constants.dart';
 import 'package:tubes_provis/Screens/CalculatorPage/IconButtonAction.dart';
 import 'package:tubes_provis/Screens/CalculatorPage/CalculateBMI.dart';
+import 'package:intl/intl.dart';
 
 enum Gender { male, female }
 
@@ -22,6 +23,12 @@ class Calculator extends State<CalculatorPage>{
   int height = 150;
   int weight = 50;
   int age = 20;
+  TextEditingController dateController = TextEditingController();
+
+  void initState() {
+    dateController.text = ""; //set the initial value of text field
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +55,7 @@ class Calculator extends State<CalculatorPage>{
                 ),
                 SizedBox(height: 40),
                 Container(
-                  width: MediaQuery.of(context).size.width * 0.7,
+                  width: MediaQuery.of(context).size.width * 0.8,
                   child: Padding(
                     padding: EdgeInsets.all(10),
                     child: Column(
@@ -65,6 +72,50 @@ class Calculator extends State<CalculatorPage>{
                               padding: EdgeInsets.symmetric(vertical: 5, horizontal: 100),
                               child: Text("    BMI Calculator   ", style: TextStyle(color: Colors.white),),
                             )
+                        ),
+                        SizedBox(height: 20,),
+                        Container(
+                          decoration: BoxDecoration(
+                              color: kPinkMuda,
+                              borderRadius: BorderRadius.circular(20),
+                              border: Border.all(color: kPinkMuda)
+                          ),
+                          child: Padding(
+                              padding: EdgeInsets.symmetric(vertical: 50, horizontal: 50),
+                              child: Column(
+                               children: [
+                                TextField(
+
+                                  controller: dateController, //editing controller of this TextField
+                                  decoration: const InputDecoration(
+
+                                      icon: Icon(Icons.calendar_today),
+                                      labelText: "Enter Date"
+                                  ),
+                                  readOnly: true,  // when true user cannot edit text
+                                  onTap: () async {
+                                    DateTime? pickedDate = await showDatePicker(
+                                        context: context,
+                                        initialDate: DateTime.now(),
+                                        firstDate: DateTime(2000),
+                                        lastDate: DateTime(2101)
+                                    );
+
+                                    if(pickedDate != null ){
+                                      print(pickedDate);  //get the picked date in the format => 2022-07-04 00:00:00.000
+                                      String formattedDate = DateFormat('yyyy-MM-dd').format(pickedDate); // format date in required form here we use yyyy-MM-dd that means time is removed
+                                      print(formattedDate); //formatted date output using intl package =>  2022-07-04
+
+                                      setState(() {
+                                        dateController.text = formattedDate; //set foratted date to TextField value.
+                                      });
+                                    }else{
+                                      print("Date is not selected");
+                                    }
+                                  },
+                                )
+                               ],
+                              )),
                         ),
                         SizedBox(height: 20,),
                         Container(
@@ -287,6 +338,7 @@ class Calculator extends State<CalculatorPage>{
                             onTap: () {
                               // Provider.of<Calculate>(context, listen: true).count(weight, height);
                               context.read<Calculate>().count(weight, height);
+                              context.read<Calculate>().addDate(dateController.text);
                               context.read<Calculate>().getResultCategory();
                               context.read<Calculate>().getColor();
                               context.read<Calculate>().getComment();
