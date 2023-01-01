@@ -146,7 +146,7 @@ class HomePage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Padding(
-                          padding: const EdgeInsets.only(left: 50.0, top: 60.0, right: 20.0, bottom: 0),
+                          padding: const EdgeInsets.only(left: 30.0, top: 60.0, right: 20.0, bottom: 0),
                           child: Text(
                             "What are you looking for?",
                             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
@@ -166,6 +166,8 @@ class HomePage extends StatelessWidget {
                                   const SizedBox(height: 15,),
                                   InkWell(
                                     child: Container(
+                                        width: 500,
+                                        height: 130,
                                         decoration: BoxDecoration(
                                             color: const Color(0xffdff3f3),
                                             borderRadius: BorderRadius.circular(10),
@@ -175,15 +177,15 @@ class HomePage extends StatelessWidget {
                                         child: Wrap(
                                           // mainAxisAlignment: MainAxisAlignment.spaceAround,
                                           children: [
+                                            // const SizedBox(width: 0),
+                                            Icon(Icons.calculate_rounded, size: 40, color: Colors.blueAccent),
                                             Column(
                                               crossAxisAlignment: CrossAxisAlignment.start,
                                               children: [
-                                                Text("BMI Calculator", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
-                                                Text("Count your body mass index", style: TextStyle(color: Colors.grey))
+                                                Text(" BMI Calculator", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
+                                                Text(" Count your body mass index", style: TextStyle(color: Colors.grey, fontSize: 13))
                                               ],
                                             ),
-                                            const SizedBox(width: 50),
-                                            Icon(Icons.calculate_rounded, size: 40, color: Colors.blueAccent,)
                                           ],
                                         )
                                     ),
@@ -192,6 +194,8 @@ class HomePage extends StatelessWidget {
                                   const SizedBox(height: 15,),
                                   InkWell(
                                     child: Container(
+                                        width: 500,
+                                        height: 130,
                                         decoration: BoxDecoration(
                                             color: const Color(0xffdff3f3),
                                             borderRadius: BorderRadius.circular(10),
@@ -201,15 +205,15 @@ class HomePage extends StatelessWidget {
                                         child: Wrap(
                                           // mainAxisAlignment: MainAxisAlignment.spaceAround,
                                           children: [
+                                            // const SizedBox(width: 70),
+                                            Icon(Icons.article_outlined, size: 40, color: Colors.blueAccent),
                                             Column(
                                               crossAxisAlignment: CrossAxisAlignment.start,
                                               children: [
-                                                Text("Blog", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
-                                                Text("Find out more about BMI  ", style: TextStyle(color: Colors.grey))
+                                                Text(" Blog", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
+                                                Text(" Find out more about BMI  ", style: TextStyle(color: Colors.grey, fontSize: 13))
                                               ],
                                             ),
-                                            const SizedBox(width: 70),
-                                            Icon(Icons.article_outlined, size: 40, color: Colors.blueAccent,)
                                           ],
                                         )
                                     ),
