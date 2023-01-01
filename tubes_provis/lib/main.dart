@@ -1,9 +1,11 @@
+
 import 'dart:developer';
 
 import 'package:provider/provider.dart';
 
 import 'package:flutter/material.dart';
 import 'package:tubes_provis/Screens/ResultPage/ResultPageComponent.dart';
+import 'package:tubes_provis/Screens/loginPage/LoginForm.dart';
 import 'package:tubes_provis/constants.dart';
 import 'package:tubes_provis/Screens/LandingPage/LandingPageComponent.dart';
 import 'package:tubes_provis/Screens/HomePage/HomePageComponent.dart';
@@ -70,7 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
       //
       //   title: Text(widget.title),
       // ),
-      body: LandingPage()
+      body: LoginForm()
     );
   }
 }
