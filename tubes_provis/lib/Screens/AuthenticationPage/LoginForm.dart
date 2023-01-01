@@ -9,7 +9,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tubes_provis/Screens/HomePage/HomePageComponent.dart';
 import 'package:tubes_provis/constants.dart';
 import 'package:flutter/gestures.dart';
-
 import 'HomeForm.dart';
 
 class LoginForm extends StatefulWidget {
@@ -111,7 +110,6 @@ class _LoginFormState extends State<LoginForm> {
                       style: TextStyle(color: Colors.white),
                     ),
                     onPressed: login,
-
                     style: ElevatedButton.styleFrom(
                         side: BorderSide(
                             width: 1.0,

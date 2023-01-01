@@ -8,7 +8,7 @@ import 'dart:async';
 class DbHelper {
   static Database? _db;
 
-  static const String DB_Name = 'test.db';
+  static const String DB_Name = 'bmiexpert.db';
   static const String Table_User = 'user';
   static const int Version = 1;
 
@@ -17,13 +17,6 @@ class DbHelper {
   static const String C_Email = 'email';
   static const String C_Password = 'password';
 
-  // Future<Database> get db async {
-  //   if (_db != null) {
-  //     return _db;
-  //   }
-  //   _db ??= await initDb();
-  //   return _db;
-  // }
 
   Future<Database> get db async =>
       _db ??= await initDb();
@@ -35,18 +28,6 @@ class DbHelper {
     return db;
   }
 
-  // initDb() async {
-  //   var databasesPath = await getDatabasesPath();
-  //   String path = join(databasesPath, DB_Name);
-  //   var db = await openDatabase(path, version: Version, onCreate: _onCreate);
-  //   // return await openDatabase(path, version: 1,
-  //   //     onCreate: (db, version) async {
-  //   //       var batch = db.batch();
-  //   //       _onCreate(batch);
-  //   //
-  //   //       await batch.commit();
-  //   //     });
-  // }
 
   _onCreate(Database db, int intVersion) async {
     await db.execute("CREATE TABLE $Table_User ("

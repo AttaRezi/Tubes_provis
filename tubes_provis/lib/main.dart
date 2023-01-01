@@ -4,6 +4,7 @@ import 'dart:developer';
 import 'package:provider/provider.dart';
 
 import 'package:flutter/material.dart';
+import 'package:tubes_provis/Screens/HistoryPage/HistoryPageComponent.dart';
 import 'package:tubes_provis/Screens/ResultPage/ResultPageComponent.dart';
 import 'package:tubes_provis/Screens/AuthenticationPage/LoginForm.dart';
 import 'package:tubes_provis/Screens/AuthenticationPage/SignupForm.dart';
@@ -51,6 +52,7 @@ class MyApp extends StatelessWidget {
           '/result' : (contex) => ResultPage(),
           '/sign_up' : (contex) => SignupForm(),
           '/sign_in' : (contex) => LoginForm(),
+          '/history' : (contex) => HistoryPage(),
 
         },
       )

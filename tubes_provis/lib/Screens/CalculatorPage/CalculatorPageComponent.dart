@@ -1,11 +1,16 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tubes_provis/Screens/CalculatorPage/CalculateChangeNotifier.dart';
 import 'package:tubes_provis/constants.dart';
 import 'package:tubes_provis/Screens/CalculatorPage/IconButtonAction.dart';
-import 'package:tubes_provis/Screens/CalculatorPage/CalculateBMI.dart';
+import 'package:tubes_provis/Model/HistoryModel.dart';
 import 'package:intl/intl.dart';
+
+
+import '../../Comm/comHelper.dart';
+import '../../DatabaseHandler/DbHelperHistory.dart';
 
 enum Gender { male, female }
 
@@ -18,17 +23,90 @@ class CalculatorPage extends StatefulWidget{
 
 }
 
-class Calculator extends State<CalculatorPage>{
+class Calculator extends State<CalculatorPage> {
+  Future<SharedPreferences> _pref = SharedPreferences.getInstance();
+
   late Gender selectedGender;
   int height = 150;
   int weight = 50;
   int age = 20;
   TextEditingController dateController = TextEditingController();
+  var dbHelper;
 
+  @override
   void initState() {
     dateController.text = ""; //set the initial value of text field
     super.initState();
+    super.initState();
+    dbHelper = DbHelperHistory();
   }
+
+
+  savetoDb() async {
+    print("haiiii");
+    final SharedPreferences sp = await _pref;
+
+    String? date;
+    String? bmi;
+    String? resultCategory;
+
+    Consumer<Calculate>(
+        builder: (context, calculate, child) {
+          print("cek");
+          date = calculate.date;
+          bmi = calculate.bmi as String;
+          resultCategory = calculate.resultCategory;
+          throw '';
+
+          // return date;
+        }
+    );
+
+    String uid = sp.getString("user_id");
+
+    HistoryModel hModel = HistoryModel(uid, date, bmi, resultCategory);
+    print(hModel);
+    await dbHelper.getHistoryUser(uid, date).then((userData){
+      if (userData != null) {
+          // update
+        dbHelper.updateHistory(hModel).then((value) {
+          if (value == 1) {
+            alertDialog(context, "Successfully Updated");
+          } else {
+            alertDialog(context, "Error Update");
+          }
+        }).catchError((error) {
+          print(error);
+          alertDialog(context, "Error");
+        });
+      } else {
+         // insert
+        dbHelper.saveData(hModel).then((userData) {
+          alertDialog(context, "Successfully Saved");
+          // Navigator.push(
+          //     context, MaterialPageRoute(builder: (_) => LoginForm()));
+        }).catchError((error) {
+          print(error);
+          alertDialog(context, "Error: Data Save Fail");
+        });
+      }
+    }).catchError((error) {
+      print(error);
+      alertDialog(context, "Error: Add Fail");
+    });
+
+
+
+    await dbHelper.saveData(hModel).then((userData) {
+      alertDialog(context, "Successfully Saved");
+      // Navigator.push(
+      //     context, MaterialPageRoute(builder: (_) => LoginForm()));
+    }).catchError((error) {
+      print(error);
+      alertDialog(context, "Error: Data Save Fail");
+    });
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -337,11 +415,13 @@ class Calculator extends State<CalculatorPage>{
                           child: GestureDetector(
                             onTap: () {
                               // Provider.of<Calculate>(context, listen: true).count(weight, height);
+                              savetoDb();
                               context.read<Calculate>().count(weight, height);
                               context.read<Calculate>().addDate(dateController.text);
                               context.read<Calculate>().getResultCategory();
                               context.read<Calculate>().getColor();
                               context.read<Calculate>().getComment();
+                              print("haiiii");
                               Navigator.of(context).pushNamed("/result");
 
                             },
