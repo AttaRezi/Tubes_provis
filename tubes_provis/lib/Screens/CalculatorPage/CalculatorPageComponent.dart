@@ -2,6 +2,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:tubes_provis/DatabaseHandler/DbHelper.dart';
 import 'package:tubes_provis/Screens/CalculatorPage/CalculateChangeNotifier.dart';
 import 'package:tubes_provis/constants.dart';
 import 'package:tubes_provis/Screens/CalculatorPage/IconButtonAction.dart';
@@ -10,7 +11,7 @@ import 'package:intl/intl.dart';
 
 
 import '../../Comm/comHelper.dart';
-import '../../DatabaseHandler/DbHelperHistory.dart';
+
 
 enum Gender { male, female }
 
@@ -35,40 +36,36 @@ class Calculator extends State<CalculatorPage> {
 
   @override
   void initState() {
+    super.initState();
     dateController.text = ""; //set the initial value of text field
-    super.initState();
-    super.initState();
-    dbHelper = DbHelperHistory();
+    dbHelper = DbHelper();
   }
 
 
-  savetoDb() async {
-    print("haiiii");
+  savetoDb() async { //called when calculate button pressed
+
     final SharedPreferences sp = await _pref;
 
     String? date;
-    String? bmi;
+    double? bmi;
     String? resultCategory;
 
-    Consumer<Calculate>(
-        builder: (context, calculate, child) {
-          print("cek");
-          date = calculate.date;
-          bmi = calculate.bmi as String;
-          resultCategory = calculate.resultCategory;
-          throw '';
+    // get bmi data from state management provider
+    date = context.read<Calculate>().date;
+    bmi = context.read<Calculate>().bmi;
+    resultCategory = context.read<Calculate>().resultCategory;
 
-          // return date;
-        }
-    );
-
+    // get user id that currently login
     String uid = sp.getString("user_id");
 
+    // Instantiation object form historymodel class
     HistoryModel hModel = HistoryModel(uid, date, bmi, resultCategory);
-    print(hModel);
+
+    // check if user have a history with column date the same as input date
     await dbHelper.getHistoryUser(uid, date).then((userData){
       if (userData != null) {
-          // update
+          // have history with current date, do update
+        print("add update");
         dbHelper.updateHistory(hModel).then((value) {
           if (value == 1) {
             alertDialog(context, "Successfully Updated");
@@ -80,11 +77,9 @@ class Calculator extends State<CalculatorPage> {
           alertDialog(context, "Error");
         });
       } else {
-         // insert
-        dbHelper.saveData(hModel).then((userData) {
+         // else, do insert new history with current date
+        dbHelper.insertDataHistory(hModel).then((userDataHistory) {
           alertDialog(context, "Successfully Saved");
-          // Navigator.push(
-          //     context, MaterialPageRoute(builder: (_) => LoginForm()));
         }).catchError((error) {
           print(error);
           alertDialog(context, "Error: Data Save Fail");
@@ -95,22 +90,11 @@ class Calculator extends State<CalculatorPage> {
       alertDialog(context, "Error: Add Fail");
     });
 
-
-
-    await dbHelper.saveData(hModel).then((userData) {
-      alertDialog(context, "Successfully Saved");
-      // Navigator.push(
-      //     context, MaterialPageRoute(builder: (_) => LoginForm()));
-    }).catchError((error) {
-      print(error);
-      alertDialog(context, "Error: Data Save Fail");
-    });
   }
 
 
   @override
   Widget build(BuildContext context) {
-    // Size size = MediaQuery.of(context).size;
 
     return Scaffold(
         appBar: AppBar(
@@ -414,14 +398,17 @@ class Calculator extends State<CalculatorPage> {
                         Container(
                           child: GestureDetector(
                             onTap: () {
-                              // Provider.of<Calculate>(context, listen: true).count(weight, height);
-                              savetoDb();
+
+                              savetoDb(); // call func to save input data to db
+
+                              // call state management func
                               context.read<Calculate>().count(weight, height);
                               context.read<Calculate>().addDate(dateController.text);
                               context.read<Calculate>().getResultCategory();
                               context.read<Calculate>().getColor();
                               context.read<Calculate>().getComment();
-                              print("haiiii");
+
+                              // go to result page
                               Navigator.of(context).pushNamed("/result");
 
                             },

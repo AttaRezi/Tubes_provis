@@ -3,7 +3,7 @@ class HistoryModel {
   String? user_id;
   String? history_id;
   String? date;
-  String? bmi;
+  double? bmi;
   String? resultCategory;
 
   HistoryModel(this.user_id, this.date, this.bmi, this.resultCategory);

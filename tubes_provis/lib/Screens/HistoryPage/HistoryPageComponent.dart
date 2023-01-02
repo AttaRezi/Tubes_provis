@@ -7,7 +7,7 @@ import 'package:tubes_provis/Model/UserModel.dart';
 import 'package:tubes_provis/Screens/AuthenticationPage/LoginForm.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../../DatabaseHandler/DbHelperHistory.dart';
+import '../../DatabaseHandler/DbHelper.dart';
 
 class HistoryPage extends StatefulWidget {
   @override
@@ -18,7 +18,7 @@ class History extends State<HistoryPage> {
 
   final _formKey = new GlobalKey<FormState>();
   Future<SharedPreferences> _pref = SharedPreferences.getInstance();
-  DbHelperHistory dbHelper = DbHelperHistory();
+  DbHelper dbHelper = DbHelper();
   int count = 0;
   List<HistoryModel>? historyList;
   String? userId;
@@ -37,19 +37,15 @@ class History extends State<HistoryPage> {
     userId = sp.getString("user_id");
     print(userId);
 
-    await dbHelper.getHistoryList(userId!).then((userData) {
-      if (userData != null) {
-
-          historyList = historyList;
-          count = historyList!.length;
-
-      } else {
-        alertDialog(context, "Error: History Not Found");
-      }
-    }).catchError((error) {
-      print(error);
-      alertDialog(context, "Error: Fail");
+    // get list of history from user
+    Future<List<HistoryModel>> historyListFuture = dbHelper.getHistoryList(userId!);
+    historyListFuture.then((historyList) {
+      setState(() {
+        this.historyList = historyList;
+        this.count = historyList.length;
+      });
     });
+
 
   }
 
@@ -62,91 +58,54 @@ class History extends State<HistoryPage> {
     TextStyle? textStyle = Theme.of(context).textTheme.headline1;
     return Scaffold(
       appBar: AppBar(
-        title: Text('Home'),
+        title: Text('History'),
       ),
-      body: Container(
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Align(
-                alignment: Alignment.center,
+      body:  ListView.builder(
+        itemCount: count,
+        itemBuilder: (BuildContext context, int index) {
+          return Container(
+              width: 500,
+              height: 130,
+              decoration: BoxDecoration(
+                  color: const Color(0xffdff3f3),
+                  borderRadius: BorderRadius.circular(10),
+                  border: Border.all(color: Colors.transparent)
               ),
-              Container(
-                width: MediaQuery.of(context).size.width * 0.7,
-                child: Padding(
-                    padding: EdgeInsets.all(20),
-                    child: Column(
-                      children: [
-                        const SizedBox(height: 20,),
-                        ListView.builder(
-                          itemCount: count,
-                          itemBuilder: (BuildContext context, int index) {
-                            return Card(
-                              color: Colors.white,
-                              elevation: 2.0,
-                              child: ListTile(
-                                leading: CircleAvatar(
-                                  backgroundColor: Colors.red,
-                                  child: Icon(Icons.people),
-                                ),
-                                title: Text("${this.historyList![index].bmi}"),
-                                subtitle: Text("${this.historyList![index].date}"),
+              padding: EdgeInsets.all(20),
+              child: Wrap(
+                // mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  // const SizedBox(width: 0),
 
-                              ),
-                            );
-                          },
-                        ),
-                        const SizedBox(height: 20,),
-                      ],
-                    )
-                ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(" ${this.historyList![index].bmi?.toStringAsFixed(1)}", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
+                      Text("${this.historyList![index].resultCategory}", style: TextStyle(color: Colors.grey, fontSize: 13))
+                    ],
+                  ),
+                  Text("${this.historyList![index].date}")
+                ],
               )
-            ],
-          ),
-        ),
-      )
+          );
 
-      // body: ListView.builder(
-      //   itemCount: count,
-      //   itemBuilder: (BuildContext context, int index) {
-      //     return Card(
-      //       color: Colors.white,
-      //       elevation: 2.0,
-      //       child: ListTile(
-      //         leading: CircleAvatar(
-      //           backgroundColor: Colors.red,
-      //           child: Icon(Icons.people),
-      //         ),
-      //         title: Text(this.historyList[index].name, style: textStyle,),
-      //         subtitle: Text(this.historyList[index].phone),
-      //
-      //         onTap: () async {
-      //           var contact = await navigateToEntryForm(context, this.contactList[index]);
-      //           if (contact != null) editContact(contact);
-      //         },
-      //       ),
-      //     );
-      //   },
-      // );
+        },
+      ),
     );
   }
 }
 
-// void addContact() async {
-//   int result = await dbHelper.insert();
-//   if (result > 0) {
-//     updateListView();
-//   }
-// }
+// return Card(
+//   color: Colors.red,
+//   elevation: 2.0,
+//   child: ListTile(
+//     leading: CircleAvatar(
+//       backgroundColor: Colors.red,
+//       child: Icon(Icons.people),
+//     ),
+//     title: Text("${this.historyList![index].bmi?.toStringAsFixed(1)}"),
+//     subtitle: Text("${this.historyList![index].date}"),
 //
-// void updateListView() {
-//
-//   Future<List<HistoryModel>> contactListFuture = dbHelper.getContactList();
-//   contactListFuture.then((contactList) {
-//     setState(() {
-//       this.contactList = contactList;
-//       this.count = contactList.length;
-//     });
-//   });
-// }
+//   ),
+// );
+
