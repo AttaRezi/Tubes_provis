@@ -1,15 +1,37 @@
 # UAS Pemrograman Visual dan Piranti Bergerak
 
 A Flutter project
-
-
-# BMIXpert
-
 > Anggota Kelompok:
 > 1. Alifia Isti Fadhila (2000049)
 > 2. Nelly Joy Christi S. (2000199)
 > 3. Silmi Aulia Rohmah (2000318)
 > 4. Atta Ar Rezie Kurnia (2006836)
+
+
+# BMIXpert
+
+Aplikasi BMIXpert merupakan project Flutter yang dibuat menggunakan AndroidStudio dengan bahasa Dart.
+Aplikasi ini menggunakan data SQFLite yang memanfaatkan local storage. Tujuan dari pembuatan aplikasi ini
+ialah untuk menghitung Index Masa Tubuh (**_Body Mass Index/BMI_**). Fitur yang dimiliki aplikasi ini ialah sebagai berikut:
+1. Landing Page
+2. Sign Up/Register
+3. Sign In/Log in
+4. Home Page
+5. Calculator
+6. Result
+7. Informasi Skor BMI
+8. About
+9. List Blog
+10. Halaman Blog
+11. History
+12. Profil
+
+# Run BMIXpert on your Device
+1. Clone this repository
+2. Open project in AndroidStudio or other code editor
+3. Don't forget to get all dependencies using this command
+4. Before run the project, edit your additional run args in configuration setting
+5. Run your project using Android Emulator
 
 
 ## Preview of the App
