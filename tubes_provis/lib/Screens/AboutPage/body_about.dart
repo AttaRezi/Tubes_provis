@@ -21,7 +21,6 @@ class About extends StatelessWidget{
             Align(
               alignment: Alignment.center,
               child: Image.asset(
-
                 'assets/images/bmi_logo.png',
               ),
             ),

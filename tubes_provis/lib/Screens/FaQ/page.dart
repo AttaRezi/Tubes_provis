@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:tubes_provis/constants.dart';
 
 
-class LandingPage extends StatelessWidget{
+class FaQPage extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     Size size = MediaQuery.of(context).size;
@@ -38,7 +38,9 @@ class LandingPage extends StatelessWidget{
                                 Positioned(
                                     top: 0,
                                     left: 0,
-                                    child: Text("halo1")
+                                    child: Image.asset(
+                                      'assets/images/image_arrowleft.svg',
+                                    ),
                                 ),Positioned(
                                     top: 0,
                                     left: 150,
@@ -53,15 +55,19 @@ class LandingPage extends StatelessWidget{
                                 ),Positioned(
                                     top: 0,
                                     left: 319,
-                                    child: Text("halo2")
+                                    child: Image.asset(
+                                      'assets/images/img_search.svg',
+                                    ),
                                 ),
                               ]
                           )
                       )
-                  ),Positioned(
+                  ),
+                  Positioned(
                       top: 85,
                       left: 25,
-                      child: Text('How can we help you?', textAlign: TextAlign.center, style: TextStyle(
+                      child: Text('How can we help you?',
+                        textAlign: TextAlign.center, style: TextStyle(
                           color: Color.fromRGBO(0, 0, 0, 1),
                           fontFamily: 'Poppins',
                           fontSize: 22,
@@ -69,7 +75,8 @@ class LandingPage extends StatelessWidget{
                           fontWeight: FontWeight.normal,
                           height: 1.2727272727272727
                       ),)
-                  ),Positioned(
+                  ),
+                  Positioned(
                       top: 124,
                       left: 16,
                       child: Container(
@@ -97,7 +104,8 @@ class LandingPage extends StatelessWidget{
                                 ),Positioned(
                                     top: 11,
                                     left: 57,
-                                    child: Text('Enter your keyword', textAlign: TextAlign.left, style: TextStyle(
+                                    child: Text('Enter your keyword',
+                                      textAlign: TextAlign.left, style: TextStyle(
                                         color: Color.fromRGBO(117, 117, 117, 1),
                                         fontFamily: 'Roboto',
                                         fontSize: 14,
@@ -117,7 +125,9 @@ class LandingPage extends StatelessWidget{
                                               Positioned(
                                                   top: 0,
                                                   left: 0,
-                                                  child: Text("halo3")
+                                                  child: Image.asset(
+                                                    'assets/images/img_search_black_900',
+                                                  ),
                                               ),
                                             ]
                                         )
@@ -126,7 +136,8 @@ class LandingPage extends StatelessWidget{
                               ]
                           )
                       )
-                  ),Positioned(
+                  ),
+                  Positioned(
                       top: 177.02369689941406,
                       left: 23.076923370361328,
                       child: Container(
@@ -163,7 +174,8 @@ class LandingPage extends StatelessWidget{
                                               ),Positioned(
                                                   top: 66.97630310058594,
                                                   left: 17.094017028808594,
-                                                  child: Text('What is BMI', textAlign: TextAlign.left, style: TextStyle(
+                                                  child: Text('What is BMI',
+                                                    textAlign: TextAlign.left, style: TextStyle(
                                                       color: Color.fromRGBO(0, 0, 0, 1),
                                                       fontFamily: 'Poppins',
                                                       fontSize: 14,
@@ -174,7 +186,8 @@ class LandingPage extends StatelessWidget{
                                               ),Positioned(
                                                   top: 46.97630310058594,
                                                   left: 17.094017028808594,
-                                                  child: Text('Questions about', textAlign: TextAlign.left, style: TextStyle(
+                                                  child: Text('Questions about',
+                                                    textAlign: TextAlign.left, style: TextStyle(
                                                       color: Color.fromRGBO(97, 97, 97, 1),
                                                       fontFamily: 'Roboto',
                                                       fontSize: 14,
@@ -185,7 +198,9 @@ class LandingPage extends StatelessWidget{
                                               ),Positioned(
                                                   top: 22.9765625,
                                                   left: 16.7392578125,
-                                                  child: Text("halo4")
+                                                  child: Image.asset(
+                                                    'assets/images/img_home.svg',
+                                                  ),
                                               ),
                                             ]
                                         )
@@ -218,7 +233,8 @@ class LandingPage extends StatelessWidget{
                                               ),Positioned(
                                                   top: 66.97630310058594,
                                                   left: 17.094100952148438,
-                                                  child: Text('Getting Started', textAlign: TextAlign.left, style: TextStyle(
+                                                  child: Text('Getting Started',
+                                                    textAlign: TextAlign.left, style: TextStyle(
                                                       color: Color.fromRGBO(0, 0, 0, 1),
                                                       fontFamily: 'Poppins',
                                                       fontSize: 14,
@@ -229,7 +245,8 @@ class LandingPage extends StatelessWidget{
                                               ),Positioned(
                                                   top: 46.97630310058594,
                                                   left: 17.094100952148438,
-                                                  child: Text('Questions about', textAlign: TextAlign.left, style: TextStyle(
+                                                  child: Text('Questions about',
+                                                    textAlign: TextAlign.left, style: TextStyle(
                                                       color: Color.fromRGBO(97, 97, 97, 1),
                                                       fontFamily: 'Roboto',
                                                       fontSize: 14,
@@ -240,7 +257,9 @@ class LandingPage extends StatelessWidget{
                                               ),Positioned(
                                                   top: 22.9765625,
                                                   left: 18.700927734375,
-                                                  child: Text("halo5")
+                                                  child: Image.asset(
+                                                    'assets/images/img_notification.svg',
+                                                  ),
                                               ),
                                             ]
                                         )
@@ -249,7 +268,8 @@ class LandingPage extends StatelessWidget{
                               ]
                           )
                       )
-                  ),Positioned(
+                  ),
+                  Positioned(
                       top: 312,
                       left: 23.076923370361328,
                       child: Container(
@@ -293,7 +313,8 @@ class LandingPage extends StatelessWidget{
                                               ),Positioned(
                                                   top: 21.81982421875,
                                                   left: 15.384521484375,
-                                                  child: Text('What’s the Difference in BMI Scores Between Being Overweight and Obese?', textAlign: TextAlign.left, style: TextStyle(
+                                                  child: Text('What’s the Difference in BMI Scores Between Being Overweight and Obese?',
+                                                    textAlign: TextAlign.left, style: TextStyle(
                                                       color: Color.fromRGBO(0, 0, 0, 1),
                                                       fontFamily: 'Poppins',
                                                       fontSize: 14,
@@ -305,7 +326,8 @@ class LandingPage extends StatelessWidget{
                                             ]
                                         )
                                     )
-                                ),Positioned(
+                                ),
+                                Positioned(
                                     top: 195.01895141601562,
                                     left: 0,
                                     child: Container(
@@ -340,7 +362,8 @@ class LandingPage extends StatelessWidget{
                                               ),Positioned(
                                                   top: 12.082308769226074,
                                                   left: 15.384614944458008,
-                                                  child: Text('How is BMI calculated?', textAlign: TextAlign.left, style: TextStyle(
+                                                  child: Text('How is BMI calculated?',
+                                                    textAlign: TextAlign.left, style: TextStyle(
                                                       color: Color.fromRGBO(0, 0, 0, 1),
                                                       fontFamily: 'Poppins',
                                                       fontSize: 14,
@@ -352,7 +375,8 @@ class LandingPage extends StatelessWidget{
                                             ]
                                         )
                                     )
-                                ),Positioned(
+                                ),
+                                Positioned(
                                     top: 250.8199005126953,
                                     left: 0,
                                     child: Container(
@@ -389,18 +413,17 @@ class LandingPage extends StatelessWidget{
                                         left: 15.384521484375,
                                         child: Text('Can BMI tell me how much weight to lose?',
                                             textAlign: TextAlign.left, style: TextStyle(color: Color.fromRGBO(0, 0, 0, 1),
-
-                                        fontFamily: 'Poppins',
-                                        fontSize: 14,
-                                        letterSpacing: 0.10000000149011612,
-                                        fontWeight: FontWeight.normal,
-                                        height: 1.4285714285714286
+                                            fontFamily: 'Poppins',
+                                            fontSize: 14,
+                                            letterSpacing: 0.10000000149011612,
+                                            fontWeight: FontWeight.normal,
+                                            height: 1.4285714285714286
                                     ),)
                                 ),
                               ]
                           )
                       )
-                  ),Positioned(
+                  ), Positioned(
                       top: 45.89573669433594,
                       left: 0,
                       child: Container(
@@ -428,11 +451,13 @@ class LandingPage extends StatelessWidget{
                                           ),
                                         )
                                     )
-                                ),Positioned(
+                                ),
+                                Positioned(
                                     top: 15.393364906311035,
                                     left: 296.1538391113281,
                                     child: Text("halo9")
-                                ),Positioned(
+                                ),
+                                Positioned(
                                     top: 38.1044921875,
                                     left: 14.923095703125,
                                     child: Text('Open the Tradebase app to get started and follow the steps. Tradebase doesn’t charge a fee to create or maintain your Tradebase account.', textAlign: TextAlign.left, style: TextStyle(
@@ -443,7 +468,8 @@ class LandingPage extends StatelessWidget{
                                         fontWeight: FontWeight.normal,
                                         height: 1.4285714285714286
                                     ),)
-                                ),Positioned(
+                                ),
+                                Positioned(
                                     top: 14.104265213012695,
                                     left: 15.384614944458008,
                                     child: Text('How to create a account?', textAlign: TextAlign.left, style: TextStyle(
@@ -458,7 +484,7 @@ class LandingPage extends StatelessWidget{
                               ]
                           )
                       )
-                  ),Positioned(
+                  ), Positioned(
                       top: 0,
                       left: 0,
                       child: Container(
