@@ -1,7 +1,4 @@
-
 import 'package:flutter/material.dart';
-import 'package:tubes_provis/constants.dart';
-
 
 class FaQ extends StatelessWidget{
   @override
@@ -39,7 +36,7 @@ class FaQ extends StatelessWidget{
                                     top: 0,
                                     left: 0,
                                     child: Image.asset(
-                                      'assets/images/image_arrowleft.svg',
+                                      'assets/images/image_arrowleft.png',
                                     ),
                                 ),Positioned(
                                     top: 0,
@@ -50,13 +47,13 @@ class FaQ extends StatelessWidget{
                                         fontSize: 22,
                                         letterSpacing: 0 /*percentages not used in flutter. defaulting to zero*/,
                                         fontWeight: FontWeight.normal,
-                                        height: 1.2727272727272727
+                                        height: 1.27
                                     ),)
                                 ),Positioned(
                                     top: 0,
                                     left: 319,
                                     child: Image.asset(
-                                      'assets/images/img_search.svg',
+                                      'assets/images/img_search.png',
                                     ),
                                 ),
                               ]
@@ -73,7 +70,7 @@ class FaQ extends StatelessWidget{
                           fontSize: 22,
                           letterSpacing: 0 /*percentages not used in flutter. defaulting to zero*/,
                           fontWeight: FontWeight.normal,
-                          height: 1.2727272727272727
+                          height: 1.27
                       ),)
                   ),
                   Positioned(
@@ -126,7 +123,7 @@ class FaQ extends StatelessWidget{
                                                   top: 0,
                                                   left: 0,
                                                   child: Image.asset(
-                                                    'assets/images/img_search_black_900',
+                                                    'assets/images/img_search_black_900.png',
                                                   ),
                                               ),
                                             ]
@@ -138,20 +135,20 @@ class FaQ extends StatelessWidget{
                       )
                   ),
                   Positioned(
-                      top: 177.02369689941406,
-                      left: 23.076923370361328,
+                      top: 177,
+                      left: 23,
                       child: Container(
-                          width: 329.8077087402344,
-                          height: 111.60189819335938,
+                          width: 329.8,
+                          height: 111.6,
 
                           child: Stack(
                               children: <Widget>[
                                 Positioned(
                                     top: 0,
-                                    left: 175.9615478515625,
+                                    left: 175.96,
                                     child: Container(
-                                        width: 153.84616088867188,
-                                        height: 111.60189819335938,
+                                        width: 153.8,
+                                        height: 111.6,
 
                                         child: Stack(
                                             children: <Widget>[
@@ -159,8 +156,8 @@ class FaQ extends StatelessWidget{
                                                   top: 0,
                                                   left: 0,
                                                   child: Container(
-                                                      width: 153.84616088867188,
-                                                      height: 111.60189819335938,
+                                                      width: 153.8,
+                                                      height: 111.6,
                                                       decoration: BoxDecoration(
                                                         borderRadius : BorderRadius.only(
                                                           topLeft: Radius.circular(8),
@@ -172,8 +169,8 @@ class FaQ extends StatelessWidget{
                                                       )
                                                   )
                                               ),Positioned(
-                                                  top: 66.97630310058594,
-                                                  left: 17.094017028808594,
+                                                  top: 66.98,
+                                                  left: 17.1,
                                                   child: Text('What is BMI',
                                                     textAlign: TextAlign.left, style: TextStyle(
                                                       color: Color.fromRGBO(0, 0, 0, 1),
@@ -181,7 +178,7 @@ class FaQ extends StatelessWidget{
                                                       fontSize: 14,
                                                       letterSpacing: 0.10000000149011612,
                                                       fontWeight: FontWeight.normal,
-                                                      height: 1.4285714285714286
+                                                      height: 1.4
                                                   ),)
                                               ),Positioned(
                                                   top: 46.97630310058594,
@@ -199,7 +196,7 @@ class FaQ extends StatelessWidget{
                                                   top: 22.9765625,
                                                   left: 16.7392578125,
                                                   child: Image.asset(
-                                                    'assets/images/img_home.svg',
+                                                    'assets/images/img_home.png',
                                                   ),
                                               ),
                                             ]
@@ -258,7 +255,7 @@ class FaQ extends StatelessWidget{
                                                   top: 22.9765625,
                                                   left: 18.700927734375,
                                                   child: Image.asset(
-                                                    'assets/images/img_notification.svg',
+                                                    'assets/images/img_notification.png',
                                                   ),
                                               ),
                                             ]
@@ -310,7 +307,7 @@ class FaQ extends StatelessWidget{
                                                   top: 20.84130859375,
                                                   left: 296.15380859375,
                                                   child: Image.asset(
-                                                    'assets/images/img_plus.svg',
+                                                    'assets/images/img_plus.png',
                                                   ),
                                               ),Positioned(
                                                   top: 21.81982421875,
@@ -361,7 +358,7 @@ class FaQ extends StatelessWidget{
                                                   top: 7.696682929992676,
                                                   left: 296.1538391113281,
                                                   child: Image.asset(
-                                                    'assets/images/img_plus.svg',
+                                                    'assets/images/img_plus.png',
                                                   ),
                                               ),Positioned(
                                                   top: 12.082308769226074,
@@ -412,7 +409,7 @@ class FaQ extends StatelessWidget{
                                         top: 15.393365859985352,
                                         left: 296.1538391113281,
                                                 child: Image.asset(
-                                                  'assets/images/img_plus.svg',
+                                                  'assets/images/img_plus.png',
                                                 ),
                                     ),Positioned(
                                         top: 18.18017578125,
@@ -462,7 +459,7 @@ class FaQ extends StatelessWidget{
                                     top: 15.393364906311035,
                                     left: 296.1538391113281,
                                     child: Image.asset(
-                                      'assets/images/img_icon.svg',
+                                      'assets/images/img_icon.png',
                                     ),
                                 ),
                                 Positioned(
