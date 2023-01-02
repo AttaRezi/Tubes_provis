@@ -12,7 +12,7 @@ A Flutter project
 > 4. Atta Ar Rezie Kurnia (2006836)
 
 
-# Screenshot 
+## Preview of the App
 
 
 <p align="center">
