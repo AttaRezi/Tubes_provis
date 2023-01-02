@@ -126,7 +126,7 @@ class DbHelper {
   Future<List<Map<String, dynamic>>> select(String userId) async {
     var dbClient = await db;
     var mapList = await dbClient.rawQuery("SELECT * FROM $Table_History WHERE "
-        "$C_UserID = '$userId' ORDER BY date ASC");
+        "$C_UserID = '$userId' ORDER BY date DESC");
     return mapList;
   }
 
