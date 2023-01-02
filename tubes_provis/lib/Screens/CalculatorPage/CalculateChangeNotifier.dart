@@ -24,7 +24,9 @@ class Calculate extends ChangeNotifier{
   }
 
   void getResultCategory(){
-    if (bmi >= 25) {
+    if (bmi >= 30){
+      resultCategory = 'OBESE';
+    } else if (bmi >= 25) {
       resultCategory = 'OVERWEIGHT';
     } else if (bmi >= 18.5) {
       resultCategory ='NORMAL';
@@ -35,8 +37,11 @@ class Calculate extends ChangeNotifier{
   }
 
   void getColor(){
-    if (bmi >= 25) {
+
+    if (bmi >= 30){
       colors = Colors.red;
+    } else if (bmi >= 25) {
+      colors = Colors.orange;
     } else if (bmi >= 18.5) {
       colors = Colors.green;
     } else {

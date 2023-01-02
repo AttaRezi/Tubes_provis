@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:tubes_provis/Comm/comHelper.dart';
 import 'package:tubes_provis/Comm/genTextFormField.dart';
 import 'package:tubes_provis/DatabaseHandler/DbHelper.dart';
@@ -6,8 +7,10 @@ import 'package:tubes_provis/Model/HistoryModel.dart';
 import 'package:tubes_provis/Model/UserModel.dart';
 import 'package:tubes_provis/Screens/AuthenticationPage/LoginForm.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:tubes_provis/constants.dart';
 
 import '../../DatabaseHandler/DbHelper.dart';
+import '../CalculatorPage/CalculateChangeNotifier.dart';
 
 class HistoryPage extends StatefulWidget {
   @override
@@ -22,6 +25,8 @@ class History extends State<HistoryPage> {
   int count = 0;
   List<HistoryModel>? historyList;
   String? userId;
+
+
 
 
   @override
@@ -58,37 +63,65 @@ class History extends State<HistoryPage> {
     TextStyle? textStyle = Theme.of(context).textTheme.headline1;
     return Scaffold(
       appBar: AppBar(
-        title: Text('History'),
+          title: const Text(
+            "History",
+            style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black, fontSize: 25),
+            textAlign: TextAlign.center,
+          ),
+          centerTitle: true,
+          backgroundColor: Colors.white,
+          leading: IconButton(
+            onPressed: (){
+              Navigator.pop(context);
+            },
+            icon:Icon(Icons.arrow_back_ios),
+            color: Colors.black,
+          )
       ),
       body:  ListView.builder(
         itemCount: count,
         itemBuilder: (BuildContext context, int index) {
           return Container(
-              width: 500,
-              height: 130,
+              padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+              margin: EdgeInsets.only(left: 50, top: 20, right: 50),
+
               decoration: BoxDecoration(
-                  color: const Color(0xffdff3f3),
-                  borderRadius: BorderRadius.circular(10),
-                  border: Border.all(color: Colors.transparent)
+                  color: const Color(0xffdff3f4),
+                  borderRadius: BorderRadius.circular(20),
+                  border: Border.all(color: Colors.transparent),
               ),
-              padding: EdgeInsets.all(20),
               child: Wrap(
                 // mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  // const SizedBox(width: 0),
+                  Container(
+                    // width: MediaQuery.of(context).size.width * 0.7,
+                    child: Padding(
+                      padding: EdgeInsets.all(10),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text("${this.historyList![index].bmi?.toStringAsFixed(1)}", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
+                                  Text("${this.historyList![index].resultCategory}", style: TextStyle(color: Colors.grey, fontSize: 13)),
+                                ],
+                              ),
+                              Text("${this.historyList![index].date}"),
+                            ]
 
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(" ${this.historyList![index].bmi?.toStringAsFixed(1)}", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
-                      Text("${this.historyList![index].resultCategory}", style: TextStyle(color: Colors.grey, fontSize: 13))
-                    ],
+
+                          )
+                        ],
+                      ),
+                    ),
                   ),
-                  Text("${this.historyList![index].date}")
                 ],
               )
           );
-
         },
       ),
     );

@@ -14,7 +14,7 @@ import 'package:tubes_provis/Screens/HomePage/HomePageComponent.dart';
 import 'package:tubes_provis/Screens/AboutPage/body_about.dart';
 import 'package:tubes_provis/Screens/AboutPage/about_page.dart';
 import 'package:tubes_provis/Screens/InfoPage/InfoPageComponent.dart';
-import 'package:tubes_provis/Screens/BlogTopicPage/BlogTopic.dart';
+import 'package:tubes_provis/Screens/BlogListPage/BlogTopic.dart';
 import 'package:tubes_provis/Screens/CalculatorPage/CalculatorPageComponent.dart';
 import 'package:tubes_provis/Screens/CalculatorPage/CalculateChangeNotifier.dart';
 import 'package:tubes_provis/Screens/SignUpPage/SignUp.dart';
