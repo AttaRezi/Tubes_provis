@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Calculate extends ChangeNotifier{
+
   double bmi = 0;
   int weight = 0;
   int height = 0;
@@ -12,18 +13,18 @@ class Calculate extends ChangeNotifier{
   late String comment;
   late Color colors;
 
-  void count(int weight, int height){
+  void count(int weight, int height){ // to count bmi value
 
     bmi = (weight / pow(height / 100, 2));
     notifyListeners();
   }
 
-  void addDate(String dateInput){
+  void addDate(String dateInput){ // setter for date
     date = dateInput;
     notifyListeners();
   }
 
-  void getResultCategory(){
+  void getResultCategory(){ // to get result category
     if (bmi >= 30){
       resultCategory = 'OBESE';
     } else if (bmi >= 25) {
@@ -36,7 +37,7 @@ class Calculate extends ChangeNotifier{
     notifyListeners();
   }
 
-  void getColor(){
+  void getColor(){ // to get color for different color font in result page
 
     if (bmi >= 30){
       colors = Colors.red;
@@ -50,14 +51,4 @@ class Calculate extends ChangeNotifier{
     notifyListeners();
   }
 
-  void getComment() {
-    if (bmi >= 25) {
-      comment = 'You have higher \nthan normal weight';
-    } else if (bmi >= 18.5) {
-      comment = 'Awesome! You have \na healthy body. Stay happy.';
-    } else {
-      comment = 'You have lower \nthan normal weight';
-    }
-    notifyListeners();
-  }
 }

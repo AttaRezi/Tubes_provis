@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tubes_provis/Screens/AboutPage/backButton.dart';
-import 'package:tubes_provis/constants.dart';
 
 
 class About extends StatelessWidget{

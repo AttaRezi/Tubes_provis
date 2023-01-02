@@ -4,12 +4,10 @@ import 'package:tubes_provis/Comm/genLoginSignupHeader.dart';
 import 'package:tubes_provis/Comm/genTextFormField.dart';
 import 'package:tubes_provis/DatabaseHandler/DbHelper.dart';
 import 'package:tubes_provis/Model/UserModel.dart';
-import 'package:tubes_provis/Screens/AuthenticationPage/SignupForm.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tubes_provis/Screens/HomePage/HomePageComponent.dart';
 import 'package:tubes_provis/constants.dart';
 import 'package:flutter/gestures.dart';
-import 'HomeForm.dart';
 
 class LoginForm extends StatefulWidget {
   @override
@@ -27,20 +25,23 @@ class _LoginFormState extends State<LoginForm> {
   @override
   void initState() {
     super.initState();
-    dbHelper = DbHelper();
+    dbHelper = DbHelper(); //insialisasi DbHelper class
   }
 
   login() async {
     String uid = _conUserId.text;
     String passwd = _conPassword.text;
 
+    // make sure form field not empty
     if (uid.isEmpty) {
       alertDialog(context, "Please Enter User ID");
     } else if (passwd.isEmpty) {
       alertDialog(context, "Please Enter Password");
     } else {
+      // check if data user from input field exist on db
       await dbHelper.getLoginUser(uid, passwd).then((userData) {
         if (userData != null) {
+          // set SharedPreferences and go to home page
           setSP(userData).whenComplete(() {
             Navigator.pushAndRemoveUntil(
                 context,

@@ -177,7 +177,7 @@ class InfoPage extends StatelessWidget {
                                                   fontWeight: FontWeight.bold)),
                                           TextSpan(text: '\n'),
                                           TextSpan(text: 'Where your Body Mass Index (BMI)  '),
-                                          TextSpan(text: '>30 Kg/m2', style: TextStyle(
+                                          TextSpan(text: '≥30 Kg/m2', style: TextStyle(
                                               fontSize: 18,
                                               fontWeight: FontWeight.bold))
                                         ]
