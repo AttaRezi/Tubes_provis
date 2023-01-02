@@ -176,13 +176,13 @@ class FaQ extends StatelessWidget{
                                                         color: Color.fromRGBO(0, 0, 0, 1),
                                                         fontFamily: 'Poppins',
                                                         fontSize: 14,
-                                                        letterSpacing: 0.10000000149011612,
+                                                        letterSpacing: 0.1,
                                                         fontWeight: FontWeight.normal,
                                                         height: 1.4
                                                     ),)
                                               ),Positioned(
-                                                  top: 46.97630310058594,
-                                                  left: 17.094017028808594,
+                                                  top: 46.97,
+                                                  left: 17.1,
                                                   child: Text('Questions about',
                                                     textAlign: TextAlign.left, style: TextStyle(
                                                         color: Color.fromRGBO(97, 97, 97, 1),
@@ -190,11 +190,11 @@ class FaQ extends StatelessWidget{
                                                         fontSize: 14,
                                                         letterSpacing: 0.25,
                                                         fontWeight: FontWeight.normal,
-                                                        height: 1.4285714285714286
+                                                        height: 1.43
                                                     ),)
                                               ),Positioned(
-                                                top: 22.9765625,
-                                                left: 16.7392578125,
+                                                top: 22.97,
+                                                left: 16.7,
                                                 child: Image.asset(
                                                   'assets/images/img_home.png',
                                                 ),
@@ -206,8 +206,8 @@ class FaQ extends StatelessWidget{
                                     top: 0,
                                     left: 0,
                                     child: Container(
-                                        width: 153.84616088867188,
-                                        height: 111.60189819335938,
+                                        width: 153.8,
+                                        height: 111.6,
 
                                         child: Stack(
                                             children: <Widget>[
@@ -215,8 +215,8 @@ class FaQ extends StatelessWidget{
                                                   top: 0,
                                                   left: 0,
                                                   child: Container(
-                                                      width: 153.84616088867188,
-                                                      height: 111.60189819335938,
+                                                      width: 153.85,
+                                                      height: 111.6,
                                                       decoration: BoxDecoration(
                                                         borderRadius : BorderRadius.only(
                                                           topLeft: Radius.circular(8),
@@ -228,8 +228,8 @@ class FaQ extends StatelessWidget{
                                                       )
                                                   )
                                               ),Positioned(
-                                                  top: 66.97630310058594,
-                                                  left: 17.094100952148438,
+                                                  top: 66.97,
+                                                  left: 17.1,
                                                   child: Text('Getting Started',
                                                     textAlign: TextAlign.left, style: TextStyle(
                                                         color: Color.fromRGBO(0, 0, 0, 1),
@@ -237,11 +237,11 @@ class FaQ extends StatelessWidget{
                                                         fontSize: 14,
                                                         letterSpacing: 0.10000000149011612,
                                                         fontWeight: FontWeight.normal,
-                                                        height: 1.4285714285714286
+                                                        height: 1.4
                                                     ),)
                                               ),Positioned(
-                                                  top: 46.97630310058594,
-                                                  left: 17.094100952148438,
+                                                  top: 46.97,
+                                                  left: 17.1,
                                                   child: Text('Questions about',
                                                     textAlign: TextAlign.left, style: TextStyle(
                                                         color: Color.fromRGBO(97, 97, 97, 1),
@@ -249,11 +249,11 @@ class FaQ extends StatelessWidget{
                                                         fontSize: 14,
                                                         letterSpacing: 0.25,
                                                         fontWeight: FontWeight.normal,
-                                                        height: 1.4285714285714286
+                                                        height: 1.4
                                                     ),)
                                               ),Positioned(
-                                                top: 22.9765625,
-                                                left: 18.700927734375,
+                                                top: 22.97,
+                                                left: 18.7,
                                                 child: Image.asset(
                                                   'assets/images/img_notification.png',
                                                 ),
@@ -268,19 +268,19 @@ class FaQ extends StatelessWidget{
                   ),
                   Positioned(
                       top: 312,
-                      left: 23.076923370361328,
+                      left: 23,
                       child: Container(
-                          width: 328.923095703125,
-                          height: 456.7061462402344,
+                          width: 328.9,
+                          height: 456.7,
 
                           child: Stack(
                               children: <Widget>[
                                 Positioned(
-                                    top: 343.1800842285156,
+                                    top: 343.2,
                                     left: 0,
                                     child: Container(
-                                        width: 328.8461608886719,
-                                        height: 113.52606964111328,
+                                        width: 328.85,
+                                        height: 113.5,
 
                                         child: Stack(
                                             children: <Widget>[
@@ -288,8 +288,8 @@ class FaQ extends StatelessWidget{
                                                   top: 0,
                                                   left: 0,
                                                   child: Container(
-                                                      width: 328.8461608886719,
-                                                      height: 113.52606964111328,
+                                                      width: 328.85,
+                                                      height: 113.5,
                                                       decoration: BoxDecoration(
                                                         borderRadius : BorderRadius.only(
                                                           topLeft: Radius.circular(8),
@@ -304,22 +304,22 @@ class FaQ extends StatelessWidget{
                                                       )
                                                   )
                                               ),Positioned(
-                                                top: 20.84130859375,
-                                                left: 296.15380859375,
+                                                top: 20.8,
+                                                left: 296.2,
                                                 child: Image.asset(
                                                   'assets/images/img_plus.png',
                                                 ),
                                               ),Positioned(
-                                                  top: 21.81982421875,
-                                                  left: 15.384521484375,
+                                                  top: 21.8,
+                                                  left: 15.4,
                                                   child: Text('What’s the Difference in BMI Scores Between Being Overweight and Obese?',
                                                     textAlign: TextAlign.left, style: TextStyle(
                                                         color: Color.fromRGBO(0, 0, 0, 1),
                                                         fontFamily: 'Poppins',
                                                         fontSize: 14,
-                                                        letterSpacing: 0.10000000149011612,
+                                                        letterSpacing: 0.1,
                                                         fontWeight: FontWeight.normal,
-                                                        height: 1.4285714285714286
+                                                        height: 1.4
                                                     ),)
                                               ),
                                             ]
@@ -327,11 +327,11 @@ class FaQ extends StatelessWidget{
                                     )
                                 ),
                                 Positioned(
-                                    top: 195.01895141601562,
+                                    top: 195,
                                     left: 0,
                                     child: Container(
-                                        width: 328.8461608886719,
-                                        height: 38.48341369628906,
+                                        width: 328.84,
+                                        height: 38.48,
 
                                         child: Stack(
                                             children: <Widget>[
