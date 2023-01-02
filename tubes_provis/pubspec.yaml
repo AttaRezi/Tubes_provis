@@ -29,6 +29,7 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+
   flutter:
     sdk: flutter
   provider: any
@@ -87,6 +88,10 @@ flutter:
     - family: Poppins
       fonts:
         - asset: assets/fonts/poppins/Poppins-Medium.ttf
+        - asset: assets/fonts/poppins/Poppins-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/poppins/Poppins-Bold.ttf
+          weight: 700
 
     - family: PoppinsRegular
       fonts:
@@ -96,10 +101,10 @@ flutter:
       fonts:
         - asset: assets/fonts/poppins/Poppins-Light.ttf
 
-    - family: PoppinsSemiBold
+    - family: Roboto
       fonts:
-        - asset: assets/fonts/poppins/Poppins-SemiBold.ttf
-          weight: 700
+        - asset: assets/fonts/RobotoRegular.ttf
+          weight: 400
 
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
