@@ -5,19 +5,18 @@ import 'package:provider/provider.dart';
 
 import 'package:flutter/material.dart';
 import 'package:tubes_provis/Screens/HistoryPage/HistoryPageComponent.dart';
+import 'package:tubes_provis/Screens/ProfilePage/ProfilePageComponent.dart';
 import 'package:tubes_provis/Screens/ResultPage/ResultPageComponent.dart';
 import 'package:tubes_provis/Screens/AuthenticationPage/LoginForm.dart';
 import 'package:tubes_provis/Screens/AuthenticationPage/SignupForm.dart';
 import 'package:tubes_provis/constants.dart';
 import 'package:tubes_provis/Screens/LandingPage/LandingPageComponent.dart';
 import 'package:tubes_provis/Screens/HomePage/HomePageComponent.dart';
-import 'package:tubes_provis/Screens/AboutPage/body_about.dart';
 import 'package:tubes_provis/Screens/AboutPage/about_page.dart';
 import 'package:tubes_provis/Screens/InfoPage/InfoPageComponent.dart';
 import 'package:tubes_provis/Screens/BlogListPage/BlogTopic.dart';
 import 'package:tubes_provis/Screens/CalculatorPage/CalculatorPageComponent.dart';
 import 'package:tubes_provis/Screens/CalculatorPage/CalculateChangeNotifier.dart';
-import 'package:tubes_provis/Screens/SignUpPage/SignUp.dart';
 import 'package:tubes_provis/Screens/BlogListPage/BlogTopicContent/BlogTopic1.dart';
 import 'package:tubes_provis/Screens/BlogListPage/BlogTopicContent/BlogTopic2.dart';
 import 'package:tubes_provis/Screens/BlogListPage/BlogTopicContent/BlogTopic3.dart';
@@ -60,6 +59,8 @@ class MyApp extends StatelessWidget {
           '/blogtopic2' : (contex) => BlogTopic2(),
           '/blogtopic3' : (contex) => BlogTopic3(),
           '/blogtopic4' : (contex) => BlogTopic4(),
+          '/profile' : (contex) => ProfilePage(),
+
         },
       )
     );

@@ -155,63 +155,6 @@ class ResultPage extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 30),
-              // Container(
-              //   // margin: EdgeInsets.symmetric(horizontal: 100),
-              //   child: GestureDetector(
-              //     onTap: () {
-              //       Navigator.pop(context);
-              //     },
-              //     child: Padding(
-              //       padding: EdgeInsets.symmetric(vertical: 0, horizontal: 80),
-              //       child: Container(
-              //         decoration: BoxDecoration(
-              //           color: kPink,
-              //           borderRadius: BorderRadius.circular(20),
-              //         ),
-              //         margin: EdgeInsets.only(top: 8.0),
-              //         child: Center(
-              //           child: Text(
-              //             'RE CALCULATE',
-              //             style: TextStyle(
-              //               fontSize: 15,
-              //               fontWeight: FontWeight.bold,
-              //               color: Colors.white,
-              //             ),
-              //           ),
-              //         ),
-              //       ),
-              //     )
-              //   ),
-              // ),
-              // SizedBox(height: 30),
-              // Container(
-              //   child: GestureDetector(
-              //       onTap: (){
-              //         Navigator.of(context).pushNamed("/info");
-              //       },
-              //       child: Padding(
-              //         padding: EdgeInsets.symmetric(vertical: 0, horizontal: 80),
-              //         child: Container(
-              //           decoration: BoxDecoration(
-              //             color: kPink,
-              //             borderRadius: BorderRadius.circular(20),
-              //           ),
-              //           margin: EdgeInsets.only(top: 8.0),
-              //           child: Center(
-              //             child: Text(
-              //               'DETAIL',
-              //               style: TextStyle(
-              //                 fontSize: 15,
-              //                 fontWeight: FontWeight.bold,
-              //                 color: Colors.white,
-              //               ),
-              //             ),
-              //           ),
-              //         ),
-              //       )
-              //   ),
-              // ),
-              // SizedBox(height: 20),
             ],
           ),
         ),

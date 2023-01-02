@@ -75,6 +75,7 @@ class DbHelper {
     return null;
   }
 
+  // to update data user
   Future<int> updateUser(UserModel user) async {
     var dbClient = await db;
     var res = await dbClient.update(Table_User, user.toMap(),
@@ -82,6 +83,7 @@ class DbHelper {
     return res;
   }
 
+  // to delete data user
   Future<int> deleteUser(String user_id) async {
     var dbClient = await db;
     var res = await dbClient
@@ -90,14 +92,14 @@ class DbHelper {
   }
 
 
-  // insert new data to table history
+  // insert new data history to table history
   Future<int> insertDataHistory(HistoryModel history) async {
     var dbClient = await db;
     var res = await dbClient.insert(Table_History, history.toMap());
     return res;
   }
 
-  // check if user have history with parameter date
+  // check if user have history with current date
   Future<HistoryModel?> getHistoryUser(String userId, String date) async {
     var dbClient = await db;
     var res = await dbClient.rawQuery("SELECT * FROM $Table_History WHERE "

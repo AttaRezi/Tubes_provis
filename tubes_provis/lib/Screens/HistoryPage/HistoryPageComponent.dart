@@ -1,16 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:tubes_provis/Comm/comHelper.dart';
-import 'package:tubes_provis/Comm/genTextFormField.dart';
 import 'package:tubes_provis/DatabaseHandler/DbHelper.dart';
 import 'package:tubes_provis/Model/HistoryModel.dart';
-import 'package:tubes_provis/Model/UserModel.dart';
-import 'package:tubes_provis/Screens/AuthenticationPage/LoginForm.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:tubes_provis/constants.dart';
 
-import '../../DatabaseHandler/DbHelper.dart';
-import '../CalculatorPage/CalculateChangeNotifier.dart';
 
 class HistoryPage extends StatefulWidget {
   @override
@@ -21,12 +13,10 @@ class History extends State<HistoryPage> {
 
   final _formKey = new GlobalKey<FormState>();
   Future<SharedPreferences> _pref = SharedPreferences.getInstance();
-  DbHelper dbHelper = DbHelper();
+  DbHelper dbHelper = DbHelper();   // inisialisasi class DbHelper
   int count = 0;
   List<HistoryModel>? historyList;
   String? userId;
-
-
 
 
   @override
@@ -37,12 +27,13 @@ class History extends State<HistoryPage> {
   }
 
   Future<void> getUserData() async {
+
     final SharedPreferences sp = await _pref;
 
+    // get user id from the current user that login
     userId = sp.getString("user_id");
-    print(userId);
 
-    // get list of history from user
+    // get list of history from user login
     Future<List<HistoryModel>> historyListFuture = dbHelper.getHistoryList(userId!);
     historyListFuture.then((historyList) {
       setState(() {
@@ -91,10 +82,8 @@ class History extends State<HistoryPage> {
                   border: Border.all(color: Colors.transparent),
               ),
               child: Wrap(
-                // mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Container(
-                    // width: MediaQuery.of(context).size.width * 0.7,
                     child: Padding(
                       padding: EdgeInsets.all(10),
                       child: Column(
@@ -112,8 +101,6 @@ class History extends State<HistoryPage> {
                               ),
                               Text("${this.historyList![index].date}"),
                             ]
-
-
                           )
                         ],
                       ),
@@ -127,18 +114,4 @@ class History extends State<HistoryPage> {
     );
   }
 }
-
-// return Card(
-//   color: Colors.red,
-//   elevation: 2.0,
-//   child: ListTile(
-//     leading: CircleAvatar(
-//       backgroundColor: Colors.red,
-//       child: Icon(Icons.people),
-//     ),
-//     title: Text("${this.historyList![index].bmi?.toStringAsFixed(1)}"),
-//     subtitle: Text("${this.historyList![index].date}"),
-//
-//   ),
-// );
 

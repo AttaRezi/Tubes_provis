@@ -38,15 +38,15 @@ class _SignupFormState extends State<SignupForm> {
     String cpasswd = _conCPassword.text;
 
     if (_formKey.currentState!.validate()) {
-      if (passwd != cpasswd) {
+      if (passwd != cpasswd) { //check if pass same as confirm pass
         alertDialog(context, 'Password Mismatch');
       } else {
         _formKey.currentState!.save();
 
-        UserModel uModel = UserModel(uid, uname, email, passwd);
-        await dbHelper.saveData(uModel).then((userData) {
+        UserModel uModel = UserModel(uid, uname, email, passwd); //inisialisasi user model class
+        await dbHelper.saveData(uModel).then((userData) { // insert new data user to table
           alertDialog(context, "Successfully Saved");
-
+          // go to login page
           Navigator.push(
               context, MaterialPageRoute(builder: (_) => LoginForm()));
         }).catchError((error) {
@@ -145,7 +145,6 @@ class _SignupFormState extends State<SignupForm> {
                         style: TextStyle(color: Colors.white),
                       ),
                       onPressed: signUp,
-
                       style: ElevatedButton.styleFrom(
                           side: BorderSide(
                               width: 1.0,

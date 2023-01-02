@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:tubes_provis/constants.dart';
-import 'package:tubes_provis/Screens/AboutPage/body_about.dart';
 
 class LandingPage extends StatelessWidget{
   @override
@@ -55,9 +54,6 @@ class LandingPage extends StatelessWidget{
             child: ElevatedButton(
               onPressed: (){
                     Navigator.of(context).pushNamed("/sign_in");
-                // Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-                //   return HomePage();
-                // }));
               },
               child: Text("   Sign In   "),
               style: ElevatedButton.styleFrom(

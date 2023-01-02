@@ -62,7 +62,7 @@ class Home extends State<HomePage> {
               ListTile(
                   leading: const Icon(Icons.person_outline),
                   title: Text("Profile"),
-                  onTap: (){Navigator.of(context).pushNamed("/");}
+                  onTap: (){Navigator.of(context).pushNamed("/profile");}
               ),
               ListTile(
                   leading: const Icon(Icons.calculate),
@@ -92,7 +92,7 @@ class Home extends State<HomePage> {
               ListTile(
                   leading: const Icon(Icons.help),
                   title: Text("Help"),
-                  onTap: (){Navigator.of(context).pushNamed("/");}
+                  onTap: (){Navigator.of(context).pushNamed("/home");}
               ),
               Container(
                   child: Align(

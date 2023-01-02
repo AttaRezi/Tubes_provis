@@ -38,9 +38,8 @@ class Calculator extends State<CalculatorPage> {
   void initState() {
     super.initState();
     dateController.text = ""; //set the initial value of text field
-    dbHelper = DbHelper();
+    dbHelper = DbHelper(); // inisialisasi class DbHelper
   }
-
 
   savetoDb() async { //called when calculate button pressed
 
@@ -164,12 +163,12 @@ class Calculator extends State<CalculatorPage> {
                                     );
 
                                     if(pickedDate != null ){
-                                      print(pickedDate);  //get the picked date in the format => 2022-07-04 00:00:00.000
-                                      String formattedDate = DateFormat('yyyy-MM-dd').format(pickedDate); // format date in required form here we use yyyy-MM-dd that means time is removed
+
+                                      String formattedDate = DateFormat('yyyy-MM-dd').format(pickedDate); // change format date
                                       print(formattedDate); //formatted date output using intl package =>  2022-07-04
 
                                       setState(() {
-                                        dateController.text = formattedDate; //set foratted date to TextField value.
+                                        dateController.text = formattedDate; //set formatted date to TextField value.
                                       });
                                     }else{
                                       print("Date is not selected");
@@ -401,12 +400,11 @@ class Calculator extends State<CalculatorPage> {
 
                               savetoDb(); // call func to save input data to db
 
-                              // call state management func
+                              // call func in ChangeNotifier class
                               context.read<Calculate>().count(weight, height);
                               context.read<Calculate>().addDate(dateController.text);
                               context.read<Calculate>().getResultCategory();
                               context.read<Calculate>().getColor();
-                              context.read<Calculate>().getComment();
 
                               // go to result page
                               Navigator.of(context).pushNamed("/result");
