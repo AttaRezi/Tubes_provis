@@ -35,11 +35,12 @@ class FaQ extends StatelessWidget{
 
                           child: Stack(
                               children: <Widget>[
+                                // Positioned(
+                                //     top: 0,
+                                //     left: 0,
+                                //     // child: Text("halo1")
+                                // ),
                                 Positioned(
-                                    top: 0,
-                                    left: 0,
-                                    child: Text("halo1")
-                                ),Positioned(
                                     top: 0,
                                     left: 150,
                                     child: Text('FAQ', textAlign: TextAlign.center, style: TextStyle(
@@ -50,11 +51,12 @@ class FaQ extends StatelessWidget{
                                         fontWeight: FontWeight.normal,
                                         height: 1.2727272727272727
                                     ),)
-                                ),Positioned(
-                                    top: 0,
-                                    left: 319,
-                                    child: Text("halo2")
                                 ),
+                                // Positioned(
+                                //     top: 0,
+                                //     left: 319,
+                                //     child: Text("halo2")
+                                // ),
                               ]
                           )
                       )

@@ -87,11 +87,11 @@ class Home extends State<HomePage> {
                   title: Text("About"),
                   onTap: (){Navigator.of(context).pushNamed("/about");}
               ),
-              ListTile(
-                  leading: const Icon(Icons.help),
-                  title: Text("Help"),
-                  onTap: (){Navigator.of(context).pushNamed("/home");}
-              ),
+              // ListTile(
+              //     leading: const Icon(Icons.help),
+              //     title: Text("Help"),
+              //     onTap: (){Navigator.of(context).pushNamed("/help");}
+              // ),
               Container(
                   child: Align(
                       alignment: FractionalOffset.bottomCenter,
@@ -101,7 +101,7 @@ class Home extends State<HomePage> {
                           ListTile(
                               leading: Icon(Icons.logout),
                               title: Text('Log out'),
-                              onTap: (){Navigator.of(context).pushNamed("/help");}
+                              onTap: (){Navigator.of(context).pushNamed("/");}
                           )
                         ],
                       ))),
