@@ -18,7 +18,10 @@ import 'package:tubes_provis/Screens/BlogListPage/BlogTopic.dart';
 import 'package:tubes_provis/Screens/CalculatorPage/CalculatorPageComponent.dart';
 import 'package:tubes_provis/Screens/CalculatorPage/CalculateChangeNotifier.dart';
 import 'package:tubes_provis/Screens/SignUpPage/SignUp.dart';
-
+import 'package:tubes_provis/Screens/BlogListPage/BlogTopicContent/BlogTopic1.dart';
+import 'package:tubes_provis/Screens/BlogListPage/BlogTopicContent/BlogTopic2.dart';
+import 'package:tubes_provis/Screens/BlogListPage/BlogTopicContent/BlogTopic3.dart';
+import 'package:tubes_provis/Screens/BlogListPage/BlogTopicContent/BlogTopic4.dart';
 
 void main() {
   runApp(const MyApp());
@@ -53,7 +56,10 @@ class MyApp extends StatelessWidget {
           '/sign_up' : (contex) => SignupForm(),
           '/sign_in' : (contex) => LoginForm(),
           '/history' : (contex) => HistoryPage(),
-
+          '/blogtopic1' : (contex) => BlogTopic1(),
+          '/blogtopic2' : (contex) => BlogTopic2(),
+          '/blogtopic3' : (contex) => BlogTopic3(),
+          '/blogtopic4' : (contex) => BlogTopic4(),
         },
       )
     );

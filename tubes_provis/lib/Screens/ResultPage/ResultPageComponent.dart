@@ -135,6 +135,25 @@ class ResultPage extends StatelessWidget {
                     )
                 ),
               ),
+              SizedBox(height: 10),
+              ElevatedButton(
+                onPressed: (){
+                  Navigator.of(context).pushNamed("/history");
+                },
+                child: Text("      History      "),
+                style: ElevatedButton.styleFrom(
+                    side: BorderSide(
+                        width: 1.7,
+                        color: kPink
+                    ),
+                    backgroundColor: kPink,
+                    textStyle: const TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
+                    padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20.0)
+                    )
+                ),
+              ),
               SizedBox(height: 30),
               // Container(
               //   // margin: EdgeInsets.symmetric(horizontal: 100),

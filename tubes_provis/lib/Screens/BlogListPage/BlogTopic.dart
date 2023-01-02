@@ -73,7 +73,7 @@ class BlogTopicPage extends StatelessWidget {
                                   )
                               ),
                             ),
-                              onTap: (){Navigator.of(context).pushNamed("/home");}
+                              onTap: (){Navigator.of(context).pushNamed("/blogtopic1");}
                           ),
                           const SizedBox(height: 20,),
                           InkWell(
@@ -111,7 +111,7 @@ class BlogTopicPage extends StatelessWidget {
                                   )
                               ),
                             ),
-                              onTap: (){Navigator.of(context).pushNamed("/info");}
+                              onTap: (){Navigator.of(context).pushNamed("/blogtopic2");}
                           ),
                           const SizedBox(height: 20,),
                           InkWell(
@@ -149,7 +149,7 @@ class BlogTopicPage extends StatelessWidget {
                                   )
                               ),
                             ),
-                              onTap: (){Navigator.of(context).pushNamed("/about");}
+                              onTap: (){Navigator.of(context).pushNamed("/blogtopic3");}
                           ),
                           const SizedBox(height: 20,),
                           InkWell(
@@ -187,7 +187,7 @@ class BlogTopicPage extends StatelessWidget {
                                   )
                               ),
                             ),
-                              onTap: (){Navigator.of(context).pushNamed("/info");}
+                              onTap: (){Navigator.of(context).pushNamed("/blogtopic4");}
                           ),
                         ],
                       )

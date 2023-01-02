@@ -1,9 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tubes_provis/constants.dart';
 import 'package:tubes_provis/Screens/HomePage/HeaderShape.dart';
 
+class HomePage extends StatefulWidget {
+  @override
+  Home createState() => Home();
+}
 
-class HomePage extends StatelessWidget {
+class Home extends State<HomePage> {
+
+  Future<SharedPreferences> _pref = SharedPreferences.getInstance();
+  String? userId;
+
+  @override
+  void initState() {
+    super.initState();
+    getUserData();
+
+  }
+
+  Future<void> getUserData() async {
+    final SharedPreferences sp = await _pref;
+    userId = sp.getString("user_id");
+  }
+
+
   @override
   Widget build(BuildContext context) {
     // Size size = MediaQuery.of(context).size;
@@ -26,7 +48,7 @@ class HomePage extends StatelessWidget {
                       maxRadius: 30,
                     ),
                     SizedBox(width: 20),
-                    Text("username",
+                    Text("${userId}",
                         style: TextStyle(fontSize: 15, color: Colors.white)
                     )
                   ],
@@ -122,7 +144,7 @@ class HomePage extends StatelessWidget {
                           SizedBox(height: 80),
                           Padding(
                             padding: EdgeInsets.symmetric(vertical: 15, horizontal: 100),
-                            child: Text("Hello Username", style: TextStyle(color: Colors.white, fontSize: 20),),
+                            child: Text("Hello ${userId}", style: TextStyle(color: Colors.white, fontSize: 20),),
                           ),
                           Container(
                             decoration: BoxDecoration(
