@@ -1,6 +1,12 @@
-# tubes_provis
+# UAS Pemrograman Visual dan Piranti Bergerak
 
-A new Flutter project.
+A Flutter project.
+
+> Anggota Kelompok:
+> 1. Alifia Isti Fadhila (2000049)
+> 2. Nelly Joy Christi S. (2000199)
+> 3. Silmi Aulia Rohmah (2000318)
+> 4. Atta Ar Rezie Kurnia (2006836)
 
 ## Getting Started
 
