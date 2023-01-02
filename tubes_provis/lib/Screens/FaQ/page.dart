@@ -309,7 +309,9 @@ class FaQ extends StatelessWidget{
                                               ),Positioned(
                                                   top: 20.84130859375,
                                                   left: 296.15380859375,
-                                                  child: Text("halo6")
+                                                  child: Image.asset(
+                                                    'assets/images/img_plus.svg',
+                                                  ),
                                               ),Positioned(
                                                   top: 21.81982421875,
                                                   left: 15.384521484375,
@@ -358,7 +360,9 @@ class FaQ extends StatelessWidget{
                                               ),Positioned(
                                                   top: 7.696682929992676,
                                                   left: 296.1538391113281,
-                                                  child: Text("halo7")
+                                                  child: Image.asset(
+                                                    'assets/images/img_plus.svg',
+                                                  ),
                                               ),Positioned(
                                                   top: 12.082308769226074,
                                                   left: 15.384614944458008,
@@ -407,7 +411,9 @@ class FaQ extends StatelessWidget{
                                       ),Positioned(
                                         top: 15.393365859985352,
                                         left: 296.1538391113281,
-                                                child: Text("halo8")
+                                                child: Image.asset(
+                                                  'assets/images/img_plus.svg',
+                                                ),
                                     ),Positioned(
                                         top: 18.18017578125,
                                         left: 15.384521484375,
@@ -455,7 +461,9 @@ class FaQ extends StatelessWidget{
                                 Positioned(
                                     top: 15.393364906311035,
                                     left: 296.1538391113281,
-                                    child: Text("halo9")
+                                    child: Image.asset(
+                                      'assets/images/img_icon.svg',
+                                    ),
                                 ),
                                 Positioned(
                                     top: 38.1044921875,
