@@ -23,14 +23,14 @@ ialah untuk menghitung Index Masa Tubuh (**_Body Mass Index/BMI_**). Fitur yang 
 8. About
 9. List Blog
 10. Halaman Blog
-11. History
+11. History <br>
 12. Profil
 
 # Run BMIXpert on your Device
-1. Clone this repository
+1. Clone this repository with `git clone https://github.com/AttaRezi/Tubes_provis`
 2. Open project in AndroidStudio or other code editor
-3. Don't forget to get all dependencies using this command
-4. Before run the project, edit your additional run args in configuration setting
+3. Don't forget to get all dependencies using `flutter pub get`
+4. Before run the project, edit your additional run args in configuration setting to `--no-sound-null-safety`
 5. Run your project using Android Emulator
 
 
