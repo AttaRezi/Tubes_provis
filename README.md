@@ -23,8 +23,8 @@ ialah untuk menghitung Index Masa Tubuh (**_Body Mass Index/BMI_**). Fitur yang 
 8. About
 9. List Blog
 10. Halaman Blog
-11. History <br>
-12. Profil
+11. History
+12. Profil
 
 # Run BMIXpert on your Device
 1. Clone this repository with `git clone https://github.com/AttaRezi/Tubes_provis`
