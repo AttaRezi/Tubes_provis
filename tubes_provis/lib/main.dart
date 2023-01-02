@@ -61,6 +61,7 @@ class MyApp extends StatelessWidget {
           '/blogtopic3' : (contex) => BlogTopic3(),
           '/blogtopic4' : (contex) => BlogTopic4(),
           '/profile' : (contex) => ProfilePage(),
+          '/help' : (contex) => FaQ(),
 
         },
       )

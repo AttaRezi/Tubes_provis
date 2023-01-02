@@ -103,7 +103,7 @@ class Home extends State<HomePage> {
                           ListTile(
                               leading: Icon(Icons.logout),
                               title: Text('Log out'),
-                              onTap: (){Navigator.of(context).pushNamed("/");}
+                              onTap: (){Navigator.of(context).pushNamed("/help");}
                           )
                         ],
                       ))),
