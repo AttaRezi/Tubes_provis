@@ -21,6 +21,7 @@ import 'package:tubes_provis/Screens/BlogListPage/BlogTopicContent/BlogTopic1.da
 import 'package:tubes_provis/Screens/BlogListPage/BlogTopicContent/BlogTopic2.dart';
 import 'package:tubes_provis/Screens/BlogListPage/BlogTopicContent/BlogTopic3.dart';
 import 'package:tubes_provis/Screens/BlogListPage/BlogTopicContent/BlogTopic4.dart';
+import 'package:tubes_provis/Screens/FaQ/page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -60,6 +61,7 @@ class MyApp extends StatelessWidget {
           '/blogtopic3' : (contex) => BlogTopic3(),
           '/blogtopic4' : (contex) => BlogTopic4(),
           '/profile' : (contex) => ProfilePage(),
+          '/help' : (contex) => FaQ(),
 
         },
       )
