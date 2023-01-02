@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:tubes_provis/constants.dart';
 
 
-class FaQPage extends StatelessWidget{
+class FaQ extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     Size size = MediaQuery.of(context).size;
