@@ -110,10 +110,8 @@ class Profile extends State<ProfilePage> {
           children: [
             Padding(
               padding: EdgeInsets.only(top: 50, bottom: 20),
-              child: CircleAvatar(
-                backgroundImage: NetworkImage("http://medialengka.com/profile.jpg"),
-                maxRadius: 60,
-              ),),
+              child: Icon(Icons.person, size: 100, color: Colors.black),
+              ),
             Center(
               child: Column(
                 children: [

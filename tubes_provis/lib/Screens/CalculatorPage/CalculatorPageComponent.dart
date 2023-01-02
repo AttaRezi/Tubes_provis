@@ -130,8 +130,8 @@ class Calculator extends State<CalculatorPage> {
                                 border: Border.all(color: kPink)
                             ),
                             child: Padding(
-                              padding: EdgeInsets.symmetric(vertical: 5, horizontal: 100),
-                              child: Text("    BMI Calculator   ", style: TextStyle(color: Colors.white),),
+                              padding: EdgeInsets.symmetric(vertical: 5, horizontal: 70),
+                              child: Text("BMI Calculator", style: TextStyle(color: Colors.white),),
                             )
                         ),
                         SizedBox(height: 20,),

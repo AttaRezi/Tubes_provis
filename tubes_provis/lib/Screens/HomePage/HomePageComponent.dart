@@ -43,10 +43,8 @@ class Home extends State<HomePage> {
                 child: Row(
                   children: [
                     SizedBox(width: 10),
-                    CircleAvatar(
-                      backgroundImage: NetworkImage("http://medialengka.com/profile.jpg"),
-                      maxRadius: 30,
-                    ),
+                    Icon(Icons.person, size: 60, color: Colors.white,),
+
                     SizedBox(width: 20),
                     Text("${userId}",
                         style: TextStyle(fontSize: 15, color: Colors.white)
