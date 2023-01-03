@@ -3,7 +3,7 @@ import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:tubes_provis/constants.dart';
 
-class SquareWithRoundedCornerPainter extends CustomPainter {
+class WaveCustomPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final paint = Paint();

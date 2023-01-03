@@ -117,9 +117,9 @@ class Home extends State<HomePage> {
                     Opacity(
                         opacity: 0.5,
                         child: CustomPaint(
-                          painter: SquareWithRoundedCornerPainter(),
+                          painter: WaveCustomPainter(),
                           child: Container(
-                            // width: MediaQuery.of(context).size.width,
+
                             height: 320,
                             color: Colors.white38,
 
@@ -127,13 +127,9 @@ class Home extends State<HomePage> {
                         )
                     ),
                     CustomPaint(
-                      painter: SquareWithRoundedCornerPainter(),
+                      painter: WaveCustomPainter(),
                       child: Container(
-                        // width: MediaQuery.of(context).size.width,
                         height: 300,
-                        // color: Colors.white38,
-                        // height:200,
-
                       ),
                     ),
                     Center(
