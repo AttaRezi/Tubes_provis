@@ -8,7 +8,7 @@ class WaveCustomPainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     final paint = Paint();
 
-    // Draw a wave with custom painter
+    // Draw a wave with a custom painter
     var path = Path();
     path.lineTo(0, size.height); //start at bottom
 
