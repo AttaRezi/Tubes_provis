@@ -1,8 +1,6 @@
 
 import 'dart:developer';
-
 import 'package:provider/provider.dart';
-
 import 'package:flutter/material.dart';
 import 'package:tubes_provis/Screens/HistoryPage/HistoryPageComponent.dart';
 import 'package:tubes_provis/Screens/ProfilePage/ProfilePageComponent.dart';
